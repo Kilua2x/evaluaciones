@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defensa de práctica profesional - Psicología</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="number"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        .firma {
+            border-top: 1px solid #000;
+            margin-top: 50px;
+            padding-top: 10px;
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+        .dimension-title {
+            font-weight: bold;
+            background-color: #e6e6e6;
+        }
+    </style>
+</head>
+<body>
+    <h1>DEFENSA DE PRÁCTICA PROFESIONAL</h1>
+    <h2>Psicología</h2>
+    <h3>Pauta de evaluación</h3>
+
+    <p>La presente pauta de evaluación tiene el objetivo de medir la experiencia realizada en su práctica profesional. Este instrumento contempla aspectos tales como; la presentación formal, el desarrollo de la exposición y la habilidad de argumentación, como también los aspectos disciplinares y la comunicación.</p>
+
+    <p>Para calificar el proceso es importante considerar los siguientes niveles de logro:</p>
+
+    <h2>I. Descripción de los niveles de logro</h2>
+    <table>
+        <tr>
+            <th>Concepto</th>
+            <th>NO OBSERVADO</th>
+            <th>Nivel 1 INSUFICIENTE</th>
+            <th>Nivel 2 ELEMENTAL</th>
+            <th>Nivel 3 BUENO</th>
+            <th>Nivel 4 EXCELENTE</th>
+        </tr>
+        <tr>
+            <td>Puntaje asociado</td>
+            <td>0</td>
+            <td>1 pts.</td>
+            <td>2 pts.</td>
+            <td>3 pts.</td>
+            <td>4 pts.</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>El o la estudiante no presenta el criterio correspondiente en la dimensión evaluada.</td>
+            <td>El o la estudiante demuestra un progreso mínimo en el criterio evaluado, evidenciando dificultades para desarrollar, al nivel esperado, tal criterio.</td>
+            <td>El o la estudiante demuestra un progreso cercano al nivel esperado, desarrollando medianamente, el criterio evaluado.</td>
+            <td>El o la estudiante demuestra un nivel esperado respecto al criterio evaluado, demostrando un manejo satisfactorio en el trabajo entregado.</td>
+            <td>El o la estudiante demuestra un nivel superior respecto a las competencias demostrando un manejo sobresaliente en el criterio evaluado.</td>
+        </tr>
+    </table>
+
+    <h2>II. Identificación del/la estudiante</h2>
+    <table>
+        <tr>
+            <td>Nombre:</td>
+            <td><input type="text" id="nombre"></td>
+            <td>Fecha:</td>
+            <td><input type="date" id="fecha"></td>
+        </tr>
+        <tr>
+            <td>Docente evaluador:</td>
+            <td><input type="text" id="docente_evaluador"></td>
+        </tr>
+    </table>
+
+    <h2>III. Pauta de evaluación de Defensa Práctica Profesional:</h2>
+
+    <table id="evaluacion">
+        <tr>
+            <th>Dimensión evaluativa</th>
+            <th>Criterios de evaluación</th>
+            <th>Nivel de logro (0-4)</th>
+        </tr>
+        <!-- Presentación formal -->
+        <tr class="dimension-title">
+            <td colspan="3">Presentación formal</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Utiliza vestuario acorde a la solemnidad de la instancia de evaluación y su postura corporal es adecuada a la situación.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="presentacion"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Cumple con los criterios de saludo, presentación introductoria o resumen de la exposición antes del inicio de esta.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="presentacion"></td>
+        </tr>
+        <!-- Desarrollo de la exposición y principales argumentos -->
+        <tr class="dimension-title">
+            <td colspan="3">Desarrollo de la exposición y principales argumentos</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Desarrolla la presentación considerando una estructura definida (introducción, desarrollo y cierre), se expone el tema de manera secuencial y manteniendo el orden lógico de los puntos relevantes.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="desarrollo"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Utiliza adecuadamente los conceptos con un lenguaje acorde al área de conocimiento (lenguaje técnico pertinente) tanto en las respuestas a las preguntas como en la exposición.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="desarrollo"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Acompaña la presentación con material de apoyo de manera creativa y pertinente. (ej. Presentación PowerPoint o Prezi con fondo institucional; otros materiales de apoyo relevantes) que fortalecen la presentación.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="desarrollo"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Utiliza referencia bibliográfica y/o citas con formato APA dando cuenta de los aspectos formales del documento académico y las buenas prácticas relacionadas con la gestión del conocimiento.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="desarrollo"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Aporta una perspectiva personal novedosa y su reflexión genera elementos innovadores al ejercicio profesional ulterior.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="desarrollo"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Desarrolla la presentación incluyendo una autoevaluación y/o autocrítica a las limitaciones o reales impactos del trabajo realizado.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="desarrollo"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Demuestra un manejo y conocimiento del área y la disciplina.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="desarrollo"></td>
+        </tr>
+        <!-- Aspectos disciplinares (Plan de trabajo implementación) -->
+        <tr class="dimension-title">
+            <td colspan="3">Aspectos disciplinares (Plan de trabajo implementación)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Realiza una clara contextualización del área de intervención propuesta en el plan de trabajo.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="disciplinares"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Demuestra manejo y conocimiento disciplinar, utilizando adecuadamente teorías y modelos que fundamentan su propuesta de intervención.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="disciplinares"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Existe coherencia entre los objetivos y metas desprendidas de la intervención.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="disciplinares"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Definen mecanismo de evaluación y sistematización de la experiencia práctica.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="disciplinares"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Aporta una perspectiva personal novedosa y su reflexión genera elementos innovadores al campo disciplinar.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="disciplinares"></td>
+        </tr>
+        <!-- Habilidades de expresión -->
+        <tr class="dimension-title">
+            <td colspan="3">Habilidades de expresión</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Expresa con claridad; se consideran aspectos asociados a la modulación, uso de lenguaje formal, volumen de voz, fluidez y dicción, etc.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="expresion"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Demuestra dominio, seguridad y confianza en sus respuestas, respondiendo con claridad y aprovechando sus respuestas para profundizar aspectos del trabajo realizado.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="expresion"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Respeta el tiempo asignado siendo capaz de realizar una exposición con todos los aspectos necesarios y relevantes de exponer.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="expresion"></td>
+        </tr>
+        <!-- Dimensión competencias genéricas y sello -->
+        <tr class="dimension-title">
+            <td colspan="3">Dimensión competencias genéricas y sello</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Demuestra el desarrollo de competencias genéricas relacionadas con la comunicación efectiva aplicadas por el equipo o de manera individual en el desarrollo del proyecto (Vocabulario, claridad en la expresión de ideas, razonamiento, argumentación, tono de voz, interpretación de discurso, comunicación no verbal, atención de los escuchas, contextualización del discurso)</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="genericas"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Evidencia un discurso, claro, fluido, buen tono de la voz y amplio rango del uso de palabras relacionadas al tema que se está presentando.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="genericas"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Presenta un actitud orientada al logro de los objetivos, manejo de conflictos, distribución de actividades, sentido de comunidad y defensa del equipo (no considerar este criterio si la intervención es realizada por un/una estudiante de manera individual).</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="genericas"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Presenta respetando los principios éticos de un trabajo de Intervención (beneficencia y no maleficencia, fidelidad y responsabilidad, integridad, justicia, respeto por los derechos y dignidad de las personas).</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="genericas"></td>
+        </tr>
+    </table>
+
+    <h2>OBSERVACIONES Y SUGERENCIAS:</h2>
+    <textarea id="observaciones" rows="4" cols="50"></textarea>
+
+    <h2>RESUMEN DE LA EVALUACIÓN:</h2>
+    <table id="resumen">
+        <tr>
+            <th>Dimensión</th>
+            <th>Ponderación</th>
+            <th>Puntaje obtenido</th>
+        </tr>
+        <tr>
+            <td>Presentación formal</td>
+            <td>10%</td>
+            <td id="puntaje_presentacion">0</td>
+        </tr>
+        <tr>
+            <td>Desarrollo de la exposición</td>
+            <td>40%</td>
+            <td id="puntaje_desarrollo">0</td>
+        </tr>
+        <tr>
+            <td>Aspectos disciplinares (Plan de trabajo implementación)</td>
+            <td>30%</td>
+            <td id="puntaje_disciplinares">0</td>
+        </tr>
+        <tr>
+            <td>Habilidades de expresión</td>
+            <td>10%</td>
+            <td id="puntaje_expresion">0</td>
+        </tr>
+        <tr>
+            <td>Dimensión competencias genéricas y sello</td>
+            <td>10%</td>
+            <td id="puntaje_genericas">0</td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>Nota obtenida</strong></td>
+            <td id="nota_final">1.0</td>
+        </tr>
+    </table>
+
+    <button class="no-print" onclick="window.print()">Imprimir / Guardar como PDF</button>
+
+    <script>
+        document.addEventListener('input', function(e) {
+            if (e.target.classList.contains('puntaje')) {
+                calcularPuntajes();
+            }
+        });
+
+        function calcularPuntajes() {
+            let dimensiones = {
+                'presentacion': { sum: 0, count: 0, weight: 0.1 },
+                'desarrollo': { sum: 0, count: 0, weight: 0.4 },
+                'disciplinares': { sum: 0, count: 0, weight: 0.3 },
+                'expresion': { sum: 0, count: 0, weight: 0.1 },
+                'genericas': { sum: 0, count: 0, weight: 0.1 }
+            };
+
+            document.querySelectorAll('.puntaje').forEach(function(input) {
+                let dimension = input.dataset.dimension;
+                let value = parseFloat(input.value);
+                if (!isNaN(value) && value > 0) {
+                    dimensiones[dimension].sum += value;
+                    dimensiones[dimension].count++;
+                }
+            });
+
+            let notaFinal = 0;
+            for (let dim in dimensiones) {
+                let promedio = dimensiones[dim].count > 0 ? dimensiones[dim].sum / dimensiones[dim].count : 0;
+                let puntajePonderado = promedio * dimensiones[dim].weight;
+                notaFinal += puntajePonderado;
+                document.getElementById('puntaje_' + dim).textContent = promedio.toFixed(2);
+            }
+
+            // Convertir el puntaje a escala de 1 a 7
+            let notaEscala7 = (notaFinal / 4) * 6 + 1;
+            notaEscala7 = Math.max(1, Math.min(7, notaEscala7)); // Asegurar que esté entre 1 y 7
+            document.getElementById('nota_final').textContent = notaEscala7.toFixed(1);
+        }
+    </script>
+</body>
+</html>
