@@ -5,25 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INSTRUMENTOS EVALUATIVOS PARA PROCESOS DE PRÁCTICAS</title>
     <style>
+        :root {
+            --primary-color: #000080; /* Azul oscuro del logo */
+            --secondary-color: #004080;
+            --accent-color: #ffffff;
+            --text-color: #ffffff;
+            --hover-color: rgba(255, 255, 255, 0.2);
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0066cc, #004080);
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
         }
-        h1 {
+
+        header {
             text-align: center;
             margin-bottom: 30px;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .logo-container {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h1 {
             font-size: 2.5em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 20px 0;
         }
+
         .menu {
             list-style-type: none;
             padding: 0;
@@ -31,36 +64,50 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
+
         .menu li {
             position: relative;
         }
+
         .menu a {
             display: block;
             padding: 15px;
             background-color: rgba(255, 255, 255, 0.1);
-            color: white;
+            color: var(--text-color);
             text-decoration: none;
             border-radius: 10px;
             transition: all 0.3s;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+
         .menu a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: var(--hover-color);
             transform: translateY(-5px);
             box-shadow: 0 6px 8px rgba(0,0,0,0.2);
         }
+
         .submenu {
             list-style-type: none;
             padding-left: 20px;
             margin-top: 10px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
         }
+
+        .menu li:hover .submenu {
+            max-height: 500px;
+        }
+
         .submenu li {
             margin-top: 5px;
         }
+
         .submenu a {
             background-color: rgba(255, 255, 255, 0.05);
             padding: 10px;
         }
+
         .preview {
             display: none;
             position: absolute;
@@ -75,15 +122,30 @@
             z-index: 10;
             width: 300px;
             max-width: 90vw;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
         }
+
         .menu li:hover .preview {
             display: block;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>INSTRUMENTOS EVALUATIVOS PARA PROCESOS DE PRÁCTICAS</h1>
+        <header>
+            <div class="logo-container">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAACdCAYAAACsOIpNAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAACZ1JREFUeJzt3V+IXOUdx/HPk/zZqrVpwEi7TU3cxEZRKtYWAq0VW2kMRb2w3gnuhXgnatCL3HohxQu9aRJS1Iu0WEKh3ggK1Vj/EWO2idZqFExNmka7awKJ/4JmhO+zF2eDYXd2Z3bOzHl+Z+b9gmHdmZkzzzNsPnzmOc85j7m7AACYZF7sAgAA1URAAABBCAiAUcxshZl9ZGZ/i10LqoWAADiNmX1L0kFJ/5L0iJn9MHJJqBAOogMYYWYm6XmNhMNHvtysZraupP0tdfd9ZewL1cQIBMBpzGyVpBclbZH0L0n3SvqWmX0/amGoBAICQJJkZj+R9LKkXyRvPSrpqqTvXi5puZmtiFIcKoOAAJAkmdl3JD0t6U5Jz0l62N37JN0maaOkg5JWSVodq0ZUwxmxCwAQl5ktk7RHUoekw5J+5e4HzKxF0u8lPZZ0/UTSR5I+j1EnqoOAAA1mZoskPSNppaQeSbe6+8eS5O7XzOyspB2SXpV0UNLafM5uQ1MwwmQeQmNlzLBaa2bXSBoGAmguZrbYzNZL+oukLZI6JV3v7n8fbefufkLSPZLulLRM0j+KrRRVxAgEaDDufiq5cG6rpJOSmiTdZGYnJR1z93fN7H5Jd0vaq5GR+qWCf1w0FTMpgQYys2WSFrv7m8n2TklPKj9NtVnSEUkPufu+MGGggTACARrE3T+V9GmybWa2VNLtko5JOi7pQUn/kXSTmS139+PRikXTIiBAAyVnV+11900j75nZn5RAGAggE2a2QtIuSQNFhkLSlKTbC9ofcIqAAA1kZt+VtFvSH9z9j0WH6nb3F0L2hWZCQIAGc/cjkhoj5RR7BAIISEZAZnaLu79UdJ8AMBUCAkiS2d2S+iXt1cjFcLSuPIAJERBAMrNlkm6VtEvSa5JOSOqT9Ly7H49ZG4D6ICBobDNbKOk2SRskXZb0rqQLkl6V9Jy7n4pVH4B6ISBobMnFdH2S1kjqlHRR0nZJe939bMzaANQPAUFjS64m3yrpCklfkbRD0h53/zhqYQBqj4CgcSVXkN8uqVvSSkmPj7q6HEADIyBobGa2QNIqjVxId1kjN1/64Ky8AIBpICBoXMk9Mgbd/UTsWgDUHwEBAARhLSwAQBACAgAIQkAAAEEICAAgCAEBAATh4RVAhZnZOUm9Ge5yvaTOzIvJrknSZUlDks5L6pHUI+mY5LHLQw0REKDCkgv39kfYdY+kTklfSOqX1CfpjKQOSa2SfhSpLlQMAQEgScPu/lSyPS9ZAl7ScknnJW2UdCZGYagWAgI0IDObp5FRyWqNjEQOmNk+dz8XtzJUBQEB6szMrpO0StKNki5KOuzu70naJmm1pA8kPaThy2/bvJ2SfhO3ZFQFAQHqyMy+KmmXpPWSPpO0U9LjZrZV0hpJ+yV9XdLvJP1S0gUza3P3j+JVjCohIEANmdkPJO2UtEjSOUnr3P11M+uQ9ISkG9z9jKR1ZnZI0iZJj0naHK9qVA0BAWrGzNZKekreJek2d38j+dIdknqSeIzYIWmTpFvMrNnd+wsuF1XFhYRAPb0iaZ6kPUk8FkjaLGmBpGdHd3T3YUkfJpsLiywS1cYIBKgZM7tA0kJJT6Ym4DskfVMjo47RFkl6N9leUkyFqAMCAtSQu//TzK6RdGeyjVdOzUj6maRvjH7PzG6W9LV0G5AICFBb7v6+pPdTb50ws/mS7pPUJ2m/mW2W9KmkX0u6WtK7BZeJiiMgQA2Z2aWStmvkLKt/SHrD3V8xs8OSVkl6XtJ7km6RdNTdj8aqFdVFQICacfeL6e30g6jc/a9m9qikRZIuu/vVQotDLRAQoGbc/UNJOPVHKaOAAI3n63ELQFUREKCJufuwmTECwaR4HghQP+nRRZ+ZrY9WCWqDEQhQP6PRyGLeDTQtAgLUT3o0wv1AMLUiHqM5V9IaSU2S/jfDb5+U3EUlmAd+Woh+c64CyojxNfCwu8+bSxHzM/wOS2bUblPBfdd9H5n+XmaUfWR0Hjubm4uPv+nIpqaPlv+vb+HdH1xc9JODh3/y0vz582e9o6lEHoF8kGwPZ/j9l4IDkpzW2Z9hn7mX8cDJuXhf0tCkXzbNmvAVLGNBMb4GDsyliKyf5azKyHLZlSzLKKLvuvfpgY4ZlxF3vzM2x+f1hx13qLNjsdbf1arO9qv6+8l+PbnnuNq6T+uR9uM6ffmqent7Z72vqUQNiLvvKmK/4Y8RqJi6///v6Fymjvarum9Niw7uXKNDncu0aWWz2tctU2f7Ve1+44w6978/631NZ17WBQLAVGkA8nJ4TrPOnjiojvZF6tndrkvP3qPXt6/WtrYW7XnjjDYkXzs8l30REAANrzWJRxNBQGOY2QIzO2Bm/5Z0SdJlM7tkZpeSDzPrm3zrGc0vI/OKzk89l5A6cPJ7mUeW+8i6jNzLiPk1MOUyZrKPPNuZzTJyLyPLcgO/BmKX0eLuw0X2nZdMI5BHHn9Sj+88qv37d+n2tUtG3l/XonUti/TCcwf05K5jWrfxbvX09My6PwCoEjPbZ2ZvJx+vJ+/tlMTtIxogIG1ta3T/ho16cMux097ftLJZG9oW64GNq9XW1pZFdwBQOTZiSNIRSX+S9JKkP0q6cZbdVF7WZWQXkLa167S4/4J27+me8PNn9p5Q//kLWrduXVbdAkDluPtN7r5C0gpJ6939Jknt7v5Qoxa3jM8jC94CwH/UJpKayLOM4gICACVy94HUZmOPPjIJSKsBQIUIWA2LI6kAGl4qCC2SVpjZVZV8XlImCAgA/N+lZHuxpKFlA5f/1rF/YPPWBxfMqpCKnYUFAJX0iLt/bGY/ltT/yNYfXrl/7eL9T+8f3HzHlhVBd8ooLiBXr1zR1QlXUB1RcM3A7NR/GXUvg38DFVX0/38jXi9lZi2SLkv6XNKQu581sx9JOifpPkn/lPSN4YG+1+Yvff+qbr1/zexHIBs3btSFF1/S4MDZCb/Q9/YZXejrm3U/hSthH5v37tP5m3+quz+aeNLq0fNntW/Pntn3UxEl7KPRfzeKVEK/jXeR3WRaPXwg9rMpvmBmHZJ+Luk2SZ9I+q2kJ939Uh7FZayzs1MbNnTqNxvaNPFv+gNZdfsFHq0KABlx9+3JBLNKukFSr6QXJbVIOjHHrmeNgABANg5J+omkHkmHJK3QyETAyiMgAJCN7yWvhyW9IukbZvZdM1tqZtsi1jWprG8nAgCNwt3fM7MHJHUno49WSeslrY5b2cQICABkyN3/ZGYLJa2V9KGkt919MHJZEyIgAJCxZKbkodjlTIVzDQEAQQgIACAIAQEABCEgAIAgBAQAEISAAACC/BdJ1Ie/Fst35gAAAABJRU5ErkJggg==" alt="Universidad de Aconcagua">
+            </div>
+            <h1>INSTRUMENTOS EVALUATIVOS PARA PROCESOS DE PRÁCTICAS</h1>
+        </header>
         <ul class="menu">
             <li>
                 <a href="tns-fiti.html">1. Pauta de validación de los instrumentos de práctica TNS FITI</a>
