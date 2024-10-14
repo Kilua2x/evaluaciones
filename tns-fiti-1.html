@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauta de Validación Instrumentos de Evaluación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="date"], select {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        .firma {
+            border-top: 1px solid #000;
+            margin-top: 50px;
+            padding-top: 10px;
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Pauta de Validación Instrumentos de Evaluación</h1>
+    <h2>Práctica Laboral/Profesional</h2>
+
+    <p>La siguiente pauta tiene por objetivo validar los instrumentos de evaluación utilizados en las prácticas laborales/profesionales en las diferentes carreras o programas de formación que cuenta la Universidad de Aconcagua, considerando criterios de evaluación específicos, que responden a la calidad educativa y logro del perfil de egreso.</p>
+
+    <h2>I. Datos de Carrera o Programa:</h2>
+    <table>
+        <tr>
+            <td>Carrera/Programa:</td>
+            <td><input type="text" id="carrera" value="TNS FITI"></td>
+        </tr>
+        <tr>
+            <td>Facultad:</td>
+            <td><input type="text" id="facultad" value="Ingenierías"></td>
+        </tr>
+        <tr>
+            <td>Fecha:</td>
+            <td><input type="date" id="fecha"></td>
+        </tr>
+    </table>
+
+    <h2>II. Datos de Revisor/a:</h2>
+    <table>
+        <tr>
+            <td>Nombre Completo:</td>
+            <td><input type="text" id="nombre_revisor"></td>
+        </tr>
+        <tr>
+            <td>Cargo:</td>
+            <td><input type="text" id="cargo_revisor"></td>
+        </tr>
+    </table>
+
+    <h2>III. Pauta de Evaluación:</h2>
+    <table id="evaluacion">
+        <tr>
+            <th>Dimensiones</th>
+            <th>Criterios de Evaluación</th>
+            <th>SI</th>
+            <th>NO</th>
+            <th>Observaciones</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Unificación de Instrumentos</td>
+            <td>¿Existe homogeneidad en el tipo de instrumento de evaluación aplicado (Lista de cotejo, Escala de Apreciación, Rúbrica, Pauta de evaluación)?</td>
+            <td><input type="radio" name="homogeneidad" value="si" class="evaluacion"></td>
+            <td><input type="radio" name="homogeneidad" value="no" class="evaluacion"></td>
+            <td><input type="text" class="observacion"></td>
+        </tr>
+        <tr>
+            <td>¿Los instrumentos de evaluación presentan un formato similar entre sí?</td>
+            <td><input type="radio" name="formato" value="si" class="evaluacion"></td>
+            <td><input type="radio" name="formato" value="no" class="evaluacion"></td>
+            <td><input type="text" class="observacion"></td>
+        </tr>
+        <tr>
+            <td>Congruencia con Modelo Educativo</td>
+            <td>¿Los instrumentos de evaluación se alinean con los principios del Modelo Educativo?</td>
+            <td><input type="radio" name="modelo_educativo" value="si" class="evaluacion"></td>
+            <td><input type="radio" name="modelo_educativo" value="no" class="evaluacion"></td>
+            <td><input type="text" class="observacion"></td>
+        </tr>
+        <tr>
+            <td rowspan="2">Congruencia con Perfil de Egreso</td>
+            <td>¿Los instrumentos consideran criterios de evaluación que responden a competencias disciplinares?</td>
+            <td><input type="radio" name="competencias_disciplinares" value="si" class="evaluacion"></td>
+            <td><input type="radio" name="competencias_disciplinares" value="no" class="evaluacion"></td>
+            <td><input type="text" class="observacion"></td>
+        </tr>
+        <tr>
+            <td>¿Los instrumentos consideran criterios de evaluación que responden a competencias Sello y de Formación General?</td>
+            <td><input type="radio" name="competencias_sello" value="si" class="evaluacion"></td>
+            <td><input type="radio" name="competencias_sello" value="no" class="evaluacion"></td>
+            <td><input type="text" class="observacion"></td>
+        </tr>
+        <tr>
+            <td rowspan="2">Redacción</td>
+            <td>¿Los instrumentos se presentan sin errores ortográficos y de puntuación?</td>
+            <td><input type="radio" name="ortografia" value="si" class="evaluacion"></td>
+            <td><input type="radio" name="ortografia" value="no" class="evaluacion"></td>
+            <td><input type="text" class="observacion"></td>
+        </tr>
+        <tr>
+            <td>¿Existe perspectiva de género en la redacción de los instrumentos evaluativos?</td>
+            <td><input type="radio" name="genero" value="si" class="evaluacion"></td>
+            <td><input type="radio" name="genero" value="no" class="evaluacion"></td>
+            <td><input type="text" class="observacion"></td>
+        </tr>
+    </table>
+
+    <h2>IV. Observaciones generales</h2>
+    <textarea id="observaciones_generales" rows="4" cols="50"></textarea>
+
+    <h2>Apreciación Final</h2>
+    <table>
+        <tr>
+            <td>¿Se valida técnicamente el instrumento de evaluación de práctica laboral/profesional?</td>
+            <td>
+                <input type="radio" name="validacion_final" value="si" id="validacion_si"> SI
+                <input type="radio" name="validacion_final" value="no" id="validacion_no"> NO
+            </td>
+        </tr>
+    </table>
+
+    <div class="firma">
+        <p>Firma: ____________________</p>
+    </div>
+
+    <div class="firma">
+        <p>Fecha: <span id="fecha_firma"></span></p>
+    </div>
+
+    <button class="no-print" onclick="window.print()">Imprimir / Guardar como PDF</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let today = new Date().toISOString().split('T')[0];
+            document.getElementById('fecha').value = today;
+            document.getElementById('fecha_firma').textContent = today;
+        });
+
+        document.addEventListener('change', function(e) {
+            if (e.target.classList.contains('evaluacion')) {
+                calcularValidacion();
+            }
+        });
+
+        function calcularValidacion() {
+            let total = document.querySelectorAll('.evaluacion').length / 2;
+            let positivos = document.querySelectorAll('.evaluacion[value="si"]:checked').length;
+            let porcentaje = (positivos / total) * 100;
+
+            if (porcentaje >= 80) {
+                document.getElementById('validacion_si').checked = true;
+            } else {
+                document.getElementById('validacion_no').checked = true;
+            }
+        }
+    </script>
+</body>
+</html>
