@@ -6,7 +6,7 @@
     <title>INSTRUMENTOS EVALUATIVOS PARA PROCESOS DE PRÁCTICAS</title>
     <style>
         :root {
-            --primary-color: #000080; /* Azul oscuro del logo */
+            --primary-color: #000080;
             --secondary-color: #004080;
             --accent-color: #ffffff;
             --text-color: #ffffff;
@@ -127,8 +127,44 @@
         }
 
         .menu li:hover .preview {
-            display: block;
+            display: flex;
             opacity: 1;
+        }
+
+        .preview-content {
+            flex: 1;
+        }
+
+        .preview h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .preview-thumbnail {
+            width: 100px;
+            height: 150px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            margin-left: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 10px;
+            color: #333;
+        }
+
+        .preview-thumbnail-header {
+            height: 20px;
+            background-color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .preview-thumbnail-row {
+            height: 10px;
+            background-color: #ddd;
+            margin-bottom: 5px;
         }
 
         @media (max-width: 768px) {
@@ -142,7 +178,7 @@
     <div class="container">
         <header>
             <div class="logo-container">
-                <img src="url('data:image/png;base64,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')" alt="Universidad de Aconcagua">
+                <img src="data:image/png;base64,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" alt="Universidad de Aconcagua">
             </div>
             <h1>INSTRUMENTOS EVALUATIVOS PARA PROCESOS DE PRÁCTICAS</h1>
         </header>
@@ -150,13 +186,21 @@
             <li>
                 <a href="#">1. Pauta de validación de los instrumentos de práctica TNS FITI</a>
                 <ul class="submenu">
-                    <li><a href="tns-fiti-1.html">Pauta de Validación Instrumentos de Evaluación
-Práctica Laboral/Profesional</a></li>
-                    <li><a href="tns-fiti-2.html">Pauta de evaluación de práctica laboral</a></li>
+                    <li><a href="tns-fiti-1.html">Pauta 1</a></li>
+                    <li><a href="tns-fiti-2.html">Pauta 2</a></li>
                 </ul>
                 <div class="preview">
-                    <h3>Vista previa: TNS FITI</h3>
-                    <p>Este instrumento evalúa aspectos clave de las prácticas en tecnicos a nivel superior de la facultad...</p>
+                    <div class="preview-content">
+                        <h3>Vista previa: TNS FITI</h3>
+                        <p>Este instrumento evalúa aspectos clave de las prácticas en tecnicos a nivel superior de la facultad...</p>
+                    </div>
+                    <div class="preview-thumbnail">
+                        <div class="preview-thumbnail-header"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        TNS FITI
+                    </div>
                 </div>
             </li>
             <li>
@@ -169,8 +213,17 @@ Práctica Laboral/Profesional</a></li>
                     <li><a href="kinesiologia-5.html">Pauta 5</a></li>
                 </ul>
                 <div class="preview">
-                    <h3>Vista previa: Kinesiología</h3>
-                    <p>Esta pauta incluye cinco instrumentos para evaluar diferentes aspectos de las prácticas en Kinesiología...</p>
+                    <div class="preview-content">
+                        <h3>Vista previa: Kinesiología</h3>
+                        <p>Esta pauta incluye cinco instrumentos para evaluar diferentes aspectos de las prácticas en Kinesiología...</p>
+                    </div>
+                    <div class="preview-thumbnail">
+                        <div class="preview-thumbnail-header"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        Kinesiología
+                    </div>
                 </div>
             </li>
             <li>
@@ -182,8 +235,17 @@ Práctica Laboral/Profesional</a></li>
                     <li><a href="terapia-ocupacional-4.html">Pauta 4</a></li>
                 </ul>
                 <div class="preview">
-                    <h3>Vista previa: Terapia Ocupacional</h3>
-                    <p>Este instrumento evalúa las competencias adquiridas durante las prácticas en Terapia Ocupacional...</p>
+                    <div class="preview-content">
+                        <h3>Vista previa: Terapia Ocupacional</h3>
+                        <p>Este instrumento evalúa las competencias adquiridas durante las prácticas en Terapia Ocupacional...</p>
+                    </div>
+                    <div class="preview-thumbnail">
+                        <div class="preview-thumbnail-header"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        Terapia Ocupacional
+                    </div>
                 </div>
             </li>
             <li>
@@ -199,8 +261,17 @@ Práctica Laboral/Profesional</a></li>
                     <li><a href="enfermeria-8.html">Pauta 8</a></li>
                 </ul>
                 <div class="preview">
-                    <h3>Vista previa: Enfermería</h3>
-                    <p>Esta pauta consta de ocho instrumentos para evaluar las prácticas en Enfermería...</p>
+                    <div class="preview-content">
+                        <h3>Vista previa: Enfermería</h3>
+                        <p>Esta pauta consta de ocho instrumentos para evaluar las prácticas en Enfermería...</p>
+                    </div>
+                    <div class="preview-thumbnail">
+                        <div class="preview-thumbnail-header"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        Enfermería
+                    </div>
                 </div>
             </li>
             <li>
@@ -213,8 +284,17 @@ Práctica Laboral/Profesional</a></li>
                     <li><a href="psicologia-5.html">Pauta 5</a></li>
                 </ul>
                 <div class="preview">
-                    <h3>Vista previa: Psicología</h3>
-                    <p>Este instrumento evalúa las habilidades y conocimientos aplicados durante las prácticas en Psicología...</p>
+                    <div class="preview-content">
+                        <h3>Vista previa: Psicología</h3>
+                        <p>Este instrumento evalúa las habilidades y conocimientos aplicados durante las prácticas en Psicología...</p>
+                    </div>
+                    <div class="preview-thumbnail">
+                        <div class="preview-thumbnail-header"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        Psicología
+                    </div>
                 </div>
             </li>
             <li>
@@ -227,8 +307,17 @@ Práctica Laboral/Profesional</a></li>
                     <li><a href="derecho-5.html">Pauta 5</a></li>
                 </ul>
                 <div class="preview">
-                    <h3>Vista previa: Derecho</h3>
-                    <p>Esta pauta evalúa las competencias legales y éticas adquiridas durante las prácticas en Derecho...</p>
+                    <div class="preview-content">
+                        <h3>Vista previa: Derecho</h3>
+                        <p>Esta pauta evalúa las competencias legales y éticas adquiridas durante las prácticas en Derecho...</p>
+                    </div>
+                    <div class="preview-thumbnail">
+                        <div class="preview-thumbnail-header"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        Derecho
+                    </div>
                 </div>
             </li>
             <li>
@@ -242,8 +331,17 @@ Práctica Laboral/Profesional</a></li>
                     <li><a href="tns-enfermeria-6.html">Pauta 6</a></li>
                 </ul>
                 <div class="preview">
-                    <h3>Vista previa: TNS en Enfermería</h3>
-                    <p>Esta pauta evalúa las competencias específicas adquiridas durante las prácticas de TNS en Enfermería...</p>
+                    <div class="preview-content">
+                        <h3>Vista previa: TNS en Enfermería</h3>
+                        <p>Esta pauta evalúa las competencias específicas adquiridas durante las prácticas de TNS en Enfermería...</p>
+                    </div>
+                    <div class="preview-thumbnail">
+                        <div class="preview-thumbnail-header"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        <div class="preview-thumbnail-row"></div>
+                        TNS en Enfermería
+                    </div>
                 </div>
             </li>
         </ul>
