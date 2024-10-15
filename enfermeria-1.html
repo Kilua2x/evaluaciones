@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauta de Evaluación Práctica Clínica I</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        .firma {
+            border-top: 1px solid #000;
+            margin-top: 50px;
+            padding-top: 10px;
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Práctica clínica I</h1>
+    <h2>Carrera de enfermería</h2>
+    <h2>Pauta de evaluación</h2>
+
+    <h2>I. Identificación del/la estudiante</h2>
+    <table>
+        <tr>
+            <td>Nombre:</td>
+            <td><input type="text" id="nombre"></td>
+            <td>Fecha:</td>
+            <td><input type="date" id="fecha"></td>
+        </tr>
+        <tr>
+            <td>Servicio:</td>
+            <td><input type="text" id="servicio"></td>
+        </tr>
+        <tr>
+            <td>Campo clínico:</td>
+            <td><input type="text" id="campo_clinico"></td>
+        </tr>
+        <tr>
+            <td>Docente clínica:</td>
+            <td><input type="text" id="docente_clinica"></td>
+        </tr>
+        <tr>
+            <td>Docente universidad:</td>
+            <td><input type="text" id="docente_universidad"></td>
+        </tr>
+    </table>
+
+    <h2>II. Pauta de evaluación de desempeño práctica clínica I:</h2>
+
+    <table id="evaluacion">
+        <tr>
+            <th>Dimensión</th>
+            <th>Criterios de evaluación</th>
+            <th>Nivel de logro (0-4)</th>
+        </tr>
+        <!-- Conductual y personal -->
+        <tr>
+            <td rowspan="6">Conductual y personal - Ámbito actitudinal</td>
+            <td>Demuestra proactividad en la búsqueda de oportunidades de aprendizaje.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="actitudinal"></td>
+        </tr>
+        <tr>
+            <td>Demuestra autocrítica en el desarrollo de sus actividades.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="actitudinal"></td>
+        </tr>
+        <tr>
+            <td>Aplica principios éticos en su quehacer como enfermero/a.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="actitudinal"></td>
+        </tr>
+        <tr>
+            <td>Reconoce opiniones constructivas de parte de la supervisión del/la docente.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="actitudinal"></td>
+        </tr>
+        <tr>
+            <td>Práctica las observaciones y/o sugerencias proporcionadas por el/la docente.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="actitudinal"></td>
+        </tr>
+        <tr>
+            <td>Demuestra interés por trabajar en equipo, desarrollando habilidades como la comunicación asertiva y resolución de problemáticas.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="actitudinal"></td>
+        </tr>
+        <tr>
+            <td rowspan="4">Conductual y personal - Formalidad profesional</td>
+            <td>Mantiene una relación cordial y formal entre docentes y pares.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="formalidad"></td>
+        </tr>
+        <tr>
+            <td>Cumple puntualmente con su horario acordado. En caso de inasistencia y/o atrasos, da cuenta de ello justificándolos cuando corresponda a sus autoridades respectivas.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="formalidad"></td>
+        </tr>
+        <tr>
+            <td>Utiliza el uniforme según normas establecidas, respetando las normas del servicio clínico.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="formalidad"></td>
+        </tr>
+        <tr>
+            <td>Utiliza un adecuado lenguaje formal y escrito, considerando el nivel formativo en el que se encuentra.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="formalidad"></td>
+        </tr>
+        <tr>
+            <td rowspan="7">Conductual y personal - Atención al paciente</td>
+            <td>Mantiene la privacidad del cliente y su familia durante la atención de enfermería.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="atencion"></td>
+        </tr>
+        <tr>
+            <td>Informa cada una de las actividades propias relacionadas a la enfermería, explicando sus detalles al paciente.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="atencion"></td>
+        </tr>
+        <tr>
+            <td>Informa oportunamente en caso de cometer algún error u omisión en su quehacer como practicante de enfermería.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="atencion"></td>
+        </tr>
+        <tr>
+            <td>Respeta la autonomía del/la paciente, si esta es solicitada.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="atencion"></td>
+        </tr>
+        <tr>
+            <td>Demuestra empatía por el/la paciente, expresando preocupación por las necesidades del/la mismo/a.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="atencion"></td>
+        </tr>
+        <tr>
+            <td>Educa al paciente y su familia en actividades propias relacionadas con su quehacer de enfermería.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="atencion"></td>
+        </tr>
+        <tr>
+            <td>Mantiene una relación cordial y formal con el/la paciente y su familia.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="atencion"></td>
+        </tr>
+        <!-- Rol asistencial: Aplicación proceso de PAE -->
+        <tr>
+            <td rowspan="4">Rol asistencial: Aplicación proceso de PAE - Valoración de enfermería</td>
+            <td>Recolecta los antecedentes biopsicosociales del paciente, por medio del desarrollo de una entrevista.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="valoracion"></td>
+        </tr>
+        <tr>
+            <td>Utiliza los cuatro métodos: Inspección, palpación, auscultación y percusión de exploración en el examen físico.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="valoracion"></td>
+        </tr>
+        <tr>
+            <td>Contrasta información registrada en la ficha clínica con la de enfermería para realizar la valoración del/la paciente.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="valoracion"></td>
+        </tr>
+        <tr>
+            <td>Registra de forma clara y ordenada los datos obtenidos en la valoración, utilizando una libreta de apuntes para ello.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="valoracion"></td>
+        </tr>
+        <tr>
+            <td rowspan="9">Rol asistencial: Aplicación proceso de PAE - Diagnóstico de enfermería</td>
+            <td>Describe una respuesta humana alterada de un individuo o grupo.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="diagnostico"></td>
+        </tr>
+        <tr>
+            <td>Identifica factores de riesgo, tales como; agentes ambientales, fisiológicos, psicológicos y genéticos, los cuales aumentan la fragilidad de la persona, familia, grupo o comunidad, para padecer un problema de salud.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="diagnostico"></td>
+        </tr>
+        <tr>
+            <td>Identifica los principales problemas de enfermería jerarquizándolos.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="diagnostico"></td>
+        </tr>
+        <tr>
+            <td>Formular en pocas palabras el problema central.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="diagnostico"></td>
+        </tr>
+        <tr>
+            <td>Registra las causas del problema central.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="diagnostico"></td>
+        </tr>
+        <tr>
+            <td>Registra los efectos provocados por el problema central.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="diagnostico"></td>
+        </tr>
+        <tr>
+            <td>Identifica los tipos de diagnósticos: reales y de riesgo que afectan al usuario, familia y comunidad.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="diagnostico"></td>
+        </tr>
+        <tr>
+            <td>Explica los mecanismos fisiopatológicos que fundamentan los problemas de enfermería detectados.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="diagnostico"></td>
+        </tr>
+        <tr>
+            <td>Formula correctamente los diagnósticos de enfermería.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="diagnostico"></td>
+        </tr>
+        <tr>
+            <td rowspan="2">Rol asistencial: Aplicación proceso de PAE - Planificación de la atención de enfermería</td>
+            <td>Formula objetivo, intervención y actividades de enfermería basado en los diagnósticos de enfermería.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="planificacion"></td>
+        </tr>
+        <tr>
+            <td>Plantea las intervenciones y actividades necesarias para la solución de los problemas detectados.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="planificacion"></td>
+        </tr>
+        <tr>
+            <td rowspan="3">Rol asistencial: Aplicación proceso de PAE - Ejecución de la atención de enfermería</td>
+            <td>Realiza atención de enfermería aplicando fundamentos teóricos.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="ejecucion"></td>
+        </tr>
+        <tr>
+            <td>Ejecuta las actividades programadas y/o asignadas.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="ejecucion"></td>
+        </tr>
+        <tr>
+            <td>Ejecuta procedimientos de Enfermería en forma correcta y coherente a lo planificado.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="ejecucion"></td>
+        </tr>
+        <tr>
+            <td rowspan="5">Rol asistencial: Aplicación proceso de PAE - Examen físico general</td>
+            <td>Prepara el ambiente para el examen físico: Privacidad del paciente, Iluminación e infraestructura.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="examen_fisico"></td>
+        </tr>
+        <tr>
+            <td>Prepara el material y equipos a utilizar: Termómetro clínico, aparato de presión digital, estetoscopio, guantes de procedimiento, alcohol 70° y tórulas.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="examen_fisico"></td>
+        </tr>
+        <tr>
+            <td>Ejecuta un correcto lavado de manos antes del procedimiento.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="examen_fisico"></td>
+        </tr>
+        <tr>
+            <td>Desarrollando el proceso de examen físico identificando al paciente por su nombre, y permitiendo un trato cordial y profesional hacia su persona.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="examen_fisico"></td>
+        </tr>
+        <tr>
+            <td>Utiliza un vocabulario técnico profesional propio de la enfermería para el desarrollo del examen físico, este durante todo el proceso.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="examen_fisico"></td>
+        </tr>
+        <tr>
+            <td rowspan="5">Rol asistencial: Aplicación proceso de PAE - Control de signos vitales</td>
+            <td>Realiza control de temperatura, según pauta de evaluación.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="signos_vitales"></td>
+        </tr>
+        <tr>
+            <td>Realiza control de pulso, según pauta de evaluación.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="signos_vitales"></td>
+        </tr>
+        <tr>
+            <td>Realiza control de frecuencia respiratoria, según pauta de evaluación.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="signos_vitales"></td>
+        </tr>
+        <tr>
+            <td>Realiza control de Presión arterial, según pauta de evaluación.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="signos_vitales"></td>
+        </tr>
+        <tr>
+            <td>Utiliza lenguaje Técnico durante todo el transcurso de su práctica.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="signos_vitales"></td>
+        </tr>
+        <tr>
+            <td rowspan="7">Rol asistencial: Aplicación proceso de PAE - Esterilización</td>
+            <td>Describe las dependencias del Servicio de Esterilización, ubicando los circuitos de recepción y entrega de material.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="esterilizacion"></td>
+        </tr>
+        <tr>
+            <td>Prepara diferentes materiales para el proceso de esterilización: Autoclave objetos de acero inoxidable, vidrio y plásticos como el PP (polipropileno), PMP (polimetilpenteno) PTFE/PFA (teflón).</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="esterilizacion"></td>
+        </tr>
+        <tr>
+            <td>Realiza esterilización por medio de procedimiento físicos y químicos: Calor (seco, húmedo), flujo laminar y radiación.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="esterilizacion"></td>
+        </tr>
+        <tr>
+            <td>Manipula el material sucio, limpio y estéril de acuerdo con las normas del servicio.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="esterilizacion"></td>
+        </tr>
+        <tr>
+            <td>Maneja el programa del REAS en su establecimiento.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="esterilizacion"></td>
+        </tr>
+        <tr>
+            <td>Reconoce cada una de las etapas del proceso de esterilización: Recepción, clasificación, lavado, secado, inspección, preparación, empaque, rotulación, exposición al método de esterilización y distribución.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="esterilizacion"></td>
+        </tr>
+        <tr>
+            <td>Ejecuta un correcto lavado de manos antes del procedimiento.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="esterilizacion"></td>
+        </tr>
+        <tr>
+            <td rowspan="2">Rol asistencial: Aplicación proceso de PAE - Evaluación de la Atención de Enfermería</td>
+            <td>Evalúa la atención proporcionada al paciente en relación con los resultados esperados.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="evaluacion"></td>
+        </tr>
+        <tr>
+            <td>Utiliza datos de la evaluación para reformular el plan de atención programado.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="evaluacion"></td>
+        </tr>
+        <!-- Manejo administrativo -->
+        <tr>
+            <td rowspan="3">Manejo administrativo</td>
+            <td>Realiza proceso educativo de acuerdo con la necesidad alterada.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo"></td>
+        </tr>
+        <tr>
+            <td>Presenta registro de PAE ordenadamente en cada una de sus 5 etapa (1. Valoración; 2. Diagnóstico; 3. Planeación; 4. Ejecución; 5. Evaluación)</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo"></td>
+        </tr>
+        <tr>
+            <td>Realiza registros de procedimientos de acuerdo con las normas del servicio.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo"></td>
+        </tr>
+        <!-- Competencias genéricas y sello -->
+        <tr>
+            <td rowspan="7">Dimensión competencias genéricas y sello - Competencias genéricas</td>
+            <td>Aplica habilidades de liderazgo en el ejercicio de sus actividades, favoreciendo la resolución de problemas y el trabajo en equipo.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td>Se comunica efectivamente con sus compañeros/as y sus superiores, exponiendo de forma clara y concreta sus argumentos, escuchando activamente y transmitiendo la información de forma entendible y empática.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td>Organiza tareas a corto y largo plazo, priorizando las actividades que requieran urgencia.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td>Realiza un trabajo colaborativo con sus compañeros/as y superiores, promoviendo la proactividad y el desarrollo de las metas comunes.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td>Resuelve problemáticas propias de su quehacer, considerando los protocolos, manuales y reglamentación vigente.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td>Utiliza un pensamiento crítico en la toma de decisiones, argumentado sus ideas y propuestas.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td>Aplica habilidades de liderazgo en el ejercicio de sus actividades, favoreciendo la resolución de problemas y el trabajo en equipo.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td rowspan="3">Dimensión competencias genéricas y sello - Competencias sello</td>
+            <td>Aplica la ética profesional en su quehacer dentro del centro de práctica.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="sello"></td>
+        </tr>
+        <tr>
+            <td>Respeta los derechos humanos en cada una de las situaciones y actividades desarrolladas dentro del centro de práctica.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="sello"></td>
+        </tr>
+        <tr>
+            <td>Valora el respeto por el entorno natural en el que se encuentra el centro de práctica en el que se desempeña.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="sello"></td>
+        </tr>
+    </table>
+
+    <h2>OBSERVACIONES Y SUGERENCIAS:</h2>
+    <textarea id="observaciones" rows="4" cols="50"></textarea>
+
+    <h2>RESUMEN DE LA EVALUACIÓN:</h2>
+    <table id="resumen">
+        <tr>
+            <th>Dimensión</th>
+            <th>Ponderación</th>
+            <th>Puntaje obtenido</th>
+        </tr>
+        <tr>
+            <td>1. Conductual y personal</td>
+            <td>15%</td>
+            <td id="puntaje_conductual">0</td>
+        </tr>
+        <tr>
+            <td>2. Rol asistencial: Aplicación proceso de PAE</td>
+            <td>60%</td>
+            <td id="puntaje_asistencial">0</td>
+        </tr>
+        <tr>
+            <td>3. Manejo administrativo</td>
+            <td>15%</td>
+            <td id="puntaje_administrativo">0</td>
+        </tr>
+        <tr>
+            <td>4. Dimensión competencia genérica y sello</td>
+            <td>10%</td>
+            <td id="puntaje_competencia">0</td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>Nota final (1-7)</strong></td>
+            <td id="nota_final">1.0</td>
+        </tr>
+    </table>
+
+    <div class="firma">
+        <p>Firma estudiante: ____________________</p>
+    </div>
+    <div class="firma">
+        <p>Firma docente supervisor: ____________________</p>
+    </div>
+
+    <p><strong>Nota:</strong> Si el estudiante presenta uno de los ítems con nota inferior a 4,0 se considera reprobación inmediata de la Práctica.</p>
+
+    <button class="no-print" onclick="window.print()">Imprimir / Guardar como PDF</button>
+
+    <script>
+        document.addEventListener('input', function(e) {
+            if (e.target.classList.contains('puntaje')) {
+                calcularPuntajes();
+            }
+        });
+
+        function calcularPuntajes() {
+            let dimensiones = {
+                'conductual': { sum: 0, count: 0, weight: 0.15 },
+                'asistencial': { sum: 0, count: 0, weight: 0.60 },
+                'administrativo': { sum: 0, count: 0, weight: 0.15 },
+                'competencia': { sum: 0, count: 0, weight: 0.10 }
+            };
+
+            document.querySelectorAll('.puntaje').forEach(function(input) {
+                let value = parseFloat(input.value);
+                if (!isNaN(value) && value !== 0) {
+                    let dimension = input.dataset.dimension;
+                    if (dimension === 'actitudinal' || dimension === 'formalidad' || dimension === 'atencion') {
+                        dimensiones['conductual'].sum += value;
+                        dimensiones['conductual'].count++;
+                    } else if (dimension === 'valoracion' || dimension === 'diagnostico' || dimension === 'planificacion' || dimension === 'ejecucion' || dimension === 'examen_fisico' || dimension === 'signos_vitales' || dimension === 'esterilizacion' || dimension === 'evaluacion') {
+                        dimensiones['asistencial'].sum += value;
+                        dimensiones['asistencial'].count++;
+                    } else if (dimension === 'administrativo') {
+                        dimensiones['administrativo'].sum += value;
+                        dimensiones['administrativo'].count++;
+                    } else if (dimension === 'generica' || dimension === 'sello') {
+                        dimensiones['competencia'].sum += value;
+                        dimensiones['competencia'].count++;
+                    }
+                }
+            });
+
+            let notaFinal = 1;
+            for (let dim in dimensiones) {
+                let promedio = dimensiones[dim].count > 0 ? dimensiones[dim].sum / dimensiones[dim].count : 0;
+                let puntajePonderado = (promedio / 4) * 6 * dimensiones[dim].weight; // Ajuste para escala 1-7
+                notaFinal += puntajePonderado;
+                document.getElementById('puntaje_' + dim).textContent = promedio.toFixed(2);
+            }
+
+            notaFinal = Math.min(Math.max(notaFinal, 1), 7);
+            document.getElementById('nota_final').textContent = notaFinal.toFixed(1);
+
+            // Verificar si algún ítem tiene nota inferior a 4.0
+            let reprobado = false;
+            document.querySelectorAll('.puntaje').forEach(function(input) {
+                let value = parseFloat(input.value);
+                if (!isNaN(value) && value !== 0 && value < 4.0) {
+                    reprobado = true;
+                }
+            });
+
+            if (reprobado) {
+                alert("El estudiante ha reprobado la Práctica debido a que tiene al menos un ítem con nota inferior a 4.0");
+            }
+        }
+    </script>
+</body>
+</html>
