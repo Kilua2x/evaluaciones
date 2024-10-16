@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauta de Evaluación Práctica II - Nivel Primario II</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="number"], input[type="date"], select {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .nota-final {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>PAUTA DE EVALUACIÓN PRÁCTICA II</h1>
+    <h2>PRÁCTICA NIVEL PRIMARIO II</h2>
+    <h3>TÉCNICO NIVEL SUPERIOR EN ENFERMERÍA</h3>
+
+    <div class="section">
+        <h2>I. Identificación del/la estudiante</h2>
+        <table>
+            <tr>
+                <td>Nombre:</td>
+                <td><input type="text" id="nombre"></td>
+                <td>Fecha:</td>
+                <td><input type="date" id="fecha"></td>
+            </tr>
+            <tr>
+                <td>Servicio:</td>
+                <td><input type="text" id="servicio"></td>
+            </tr>
+            <tr>
+                <td>Campo clínico:</td>
+                <td><input type="text" id="campo_clinico"></td>
+            </tr>
+            <tr>
+                <td>Docente clínica:</td>
+                <td><input type="text" id="docente_clinica"></td>
+            </tr>
+            <tr>
+                <td>Docente universidad:</td>
+                <td><input type="text" id="docente_universidad"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>II. Pauta de evaluación:</h2>
+        <table id="evaluacion">
+            <tr>
+                <th>Dimensiones</th>
+                <th>Criterios de evaluación</th>
+                <th>Niveles de logro (0-4)</th>
+            </tr>
+            <tr>
+                <td rowspan="10">Aspectos formales</td>
+                <td>Cumple con asistencia y horarios establecidos, justifica inasistencias según reglamento.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Demuestra una correcta y coherente presentación personal para el ejercicio de su especialidad.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Acepta la supervisión y demuestra interés por el trabajo desempeñado, el cual se realiza de forma adecuada y coherente.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Maneja normas vigentes de técnicas y procedimientos específicos de su especialidad.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Utiliza un proceso de atención adecuado según las competencias asociadas a su especialidad.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Desempeña sus labores según la norma administrativas del Centro Clínico.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Utiliza lenguaje técnico durante el transcurso de la práctica</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Tiene un trato respetuoso, amable y humanizado con los/las pacientes y sus familias</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Utiliza lenguaje técnico durante el transcurso de la práctica en campo clínico</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Tiene un trato respetuoso/a, amable y humanizado con los pacientes y sus familias.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td rowspan="30">Aspectos Técnicos-profesionales</td>
+                <td>Identifica los servicios de apoyo clínico más utilizados conociendo su ubicación y finalidad según necesidad del paciente.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Distingue adecuadamente los materiales y equipos utilizados en la especialidad.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Utiliza recursos del servicio de forma adecuada y según indicaciones del/la supervisor/a.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Reconoce las necesidades emocionales que pudiesen surgir del/la usuario/a y la familia, entregando educación, contención y activación de red en los casos requeridos.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Maneja las normas de asepsia, antisepsia y precauciones universales en las intervenciones con pacientes.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Organiza la documentación establecida para los diferentes procesos de atención a usuarios/as</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Colabora con profesionales en la atención de su especialidad, ejecutando las indicaciones entregadas, con una actitud proactiva y humanizada.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Realiza entrega de información y exámenes al usuario/a de forma oportuna y fortalece la labor de la salud familiar y comunitaria</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Colabora asistiendo en las visitas domiciliarias a pacientes postrados, fortaleciendo la labor de la atención de salud familiar.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Ejecuta antes y después de cada procedimiento un correcto lavado de manos y uso de guantes.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Ejecuta un correcto control hemodinámico y antropométrico: Presión Arterial, Frecuencia cardiaca, Frecuencia respiratoria, Oximetría de pulso, Temperatura, peso - talla. Y avisa oportunamente patrones de alteración.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Realiza e identifica alteraciones según necesidad de enfermería (Virginia Henderson, Marjory Gordon etc.)</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Ejecuta una correcta técnica en la administración de medicamentos por vía oral según prescripción médica y/o del/la profesional a cargo.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Ejecuta una correcta técnica en la administración de medicamentos por vía intramuscular según prescripción médica y/o del profesional a cargo.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Ejecuta una correcta técnica en la administración de medicamentos por vía subcutánea según prescripción médica y/o del profesional a cargo.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Ejecuta una correcta técnica en la administración de medicamentos de tipo vía piel y mucosas según prescripción médica y/o del/la profesional a cargo.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Ejecuta una adecuada técnica de procedimiento en la instalación de fleboclisis</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Ejecuta una correcta técnica en la administración de medicamentos por vía endovenosa según prescripción médica del/la profesional a cargo.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Prepara correctamente bandeja con material de curación.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Colabora en la ejecución o asistencia al/la profesional del procedimiento de curaciones.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Registra gráfica de indicador de temperatura del refrigerador que almacena vacunas.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Realiza una correcta técnica de traspaso de vacunas desde el refrigerador al termo de almacenaje y transporte.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Colabora en los procesos de vacunación de acuerdo con el Programa Nacional de Inmunización.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Identifica y ejecuta correcta técnica de administración de vacunas bajo supervisión.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Ejecuta una correcta técnica en la toma de muestra de sangre y fluidos para análisis de laboratorio.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Ejecuta técnica correcta de la toma de ECG.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Reconoce las 12 derivaciones de ECG e identifica la técnica correcta.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Demuestra conocimientos teóricos a cada una de las actividades y procedimientos desarrollados.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Colabora en actividades educativas al usuario, familia o comunidad, con enfoque en promoción y prevención para la salud.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Ejecuta y colabora correctamente con el programa de alimentación PNAC y PACAM.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Registra actividades y observaciones del usuario en forma clara, oportuna y de acuerdo con las normas del servicio.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td rowspan="9">Dimensión competencias genéricas y sello</td>
+                <td>Aplica habilidades de liderazgo en el ejercicio de sus actividades, favoreciendo la resolución de problemas y el trabajo en equipo.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="competencias_genericas"></td>
+            </tr>
+            <tr>
+                <td>Se comunica efectivamente con sus compañeros/as y sus superiores, exponiendo de forma clara y concreta sus argumentos, escuchando activamente y transmitiendo la información de forma entendible y empática.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="competencias_genericas"></td>
+            </tr>
+            <tr>
+                <td>Organiza tareas a corto y largo plazo, priorizando las actividades que requieran urgencia.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="competencias_genericas"></td>
+            </tr>
+            <tr>
+                <td>Realiza un trabajo colaborativo con sus compañeros/as y superiores, promoviendo la proactividad y el desarrollo de las metas comunes.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="competencias_genericas"></td>
+            </tr>
+            <tr>
+                <td>Resuelve problemáticas propias de su quehacer, considerando los protocolos, manuales y reglamentación vigente.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="competencias_genericas"></td>
+            </tr>
+            <tr>
+                <td>Utiliza un pensamiento crítico en la toma de decisiones, argumentado sus ideas y propuestas.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="competencias_genericas"></td>
+            </tr>
+            <tr>
+                <td>Aplica la ética profesional en su quehacer dentro del centro de práctica.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="competencias_genericas"></td>
+            </tr>
+            <tr>
+                <td>Respeta los derechos humanos en cada una de las situaciones y actividades desarrolladas dentro del centro de práctica.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="competencias_genericas"></td>
+            </tr>
+            <tr>
+                <td>Valora el respeto por el entorno natural en el que se encuentra el centro de práctica en el que se desempeña.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="competencias_genericas"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>RETROALIMENTACIÓN AL ESTUDIANTE:</h2>
+        <textarea id="retroalimentacion"></textarea>
+    </div>
+
+    <div class="section">
+        <h2>OBSERVACIONES:</h2>
+        <textarea id="observaciones"></textarea>
+    </div>
+
+    <div class="section">
+        <h2>RESUMEN DE LA EVALUACIÓN:</h2>
+        <table id="resumen">
+            <tr>
+                <th>Dimensión</th>
+                <th>Ponderación</th>
+                <th>Puntaje obtenido (0-4)</th>
+                <th>Nota ponderada (1-7)</th>
+            </tr>
+            <tr>
+                <td>1. Evaluación de competencias previas</td>
+                <td>-</td>
+                <td id="puntaje_competencias_previas"></td>
+                <td id="nota_competencias_previas"></td>
+            </tr>
+            <tr>
+                <td>2. Aspectos formales</td>
+                <td>30%</td>
+                <td id="puntaje_aspectos_formales"></td>
+                <td id="nota_aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>3. Aspectos Técnicos-profesionales</td>
+                <td>40%</td>
+                <td id="puntaje_aspectos_tecnicos"></td>
+                <td id="nota_aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>4. Dimensión competencias genéricas y sello</td>
+                <td>30%</td>
+                <td id="puntaje_competencias_genericas"></td>
+                <td id="nota_competencias_genericas"></td>
+            </tr>
+            <tr>
+                <td>5. Caso Clínico</td>
+                <td>-</td>
+                <td id="puntaje_caso_clinico"></td>
+                <td id="nota_caso_clinico"></td>
+            </tr>
+        </table>
+        <p>Nota final (escala 1-7): <span id="nota_final" class="nota-final"></span></p>
+    </div>
+
+    <div class="section">
+        <h2>FIRMAS:</h2>
+        <p>Firma estudiante: _________________________</p>
+        <p>Firma docente supervisor: _________________________</p>
+    </div>
+
+    <script>
+        const notas = document.querySelectorAll('.nota');
+        const puntajes = {
+            aspectos_formales: 0,
+            aspectos_tecnicos: 0,
+            competencias_genericas: 0
+        };
+
+        const ponderaciones = {
+            aspectos_formales: 0.3,
+            aspectos_tecnicos: 0.4,
+            competencias_genericas: 0.3
+        };
+
+        function actualizarPuntajes() {
+            let notaFinal = 0;
+
+            for (const dimension in puntajes) {
+                const notasDimension = document.querySelectorAll(`.nota[data-dimension="${dimension}"]`);
+                let suma = 0;
+                let contador = 0;
+                notasDimension.forEach(nota => {
+                    const valor = parseFloat(nota.value);
+                    if (!isNaN(valor) && valor > 0) {  // Solo considera valores mayores que cero
+                        suma += valor;
+                        contador++;
+                    }
+                });
+                if (contador > 0) {
+                    puntajes[dimension] = suma / contador;
+                } else {
+                    puntajes[dimension] = 0;
+                }
+                const puntajeElement = document.getElementById(`puntaje_${dimension}`);
+                const notaElement = document.getElementById(`nota_${dimension}`);
+                if (puntajeElement) puntajeElement.textContent = puntajes[dimension].toFixed(2);
+                
+                // Convertir puntaje (0-4) a nota (1-7) y aplicar ponderación
+                const notaDimension = ((puntajes[dimension] * 1.5) + 1) * ponderaciones[dimension];
+                if (notaElement) notaElement.textContent = notaDimension.toFixed(2);
+                
+                notaFinal += notaDimension;
+            }
+
+            // Asegurar que la nota final esté en el rango 1-7
+            notaFinal = Math.max(1, Math.min(7, notaFinal));
+            
+            document.getElementById('nota_final').textContent = notaFinal.toFixed(2);
+
+            // Verificar si alguna nota es inferior a 4.0 en la escala 1-7
+            let reprobado = false;
+            notas.forEach(nota => {
+                const valor = parseFloat(nota.value);
+                if (!isNaN(valor) && valor > 0) {  // Solo considera valores mayores que cero
+                    const notaEscala17 = Math.min(Math.max((valor * 1.5) + 1, 1), 7);
+                    if (notaEscala17 < 4.0) {
+                        reprobado = true;
+                    }
+                }
+            });
+
+            if (reprobado) {
+                alert('El estudiante ha reprobado la Práctica debido a que tiene al menos un ítem con nota inferior a 4.0');
+            }
+        }
+
+        notas.forEach(nota => {
+            nota.addEventListener('input', actualizarPuntajes);
+        });
+
+        // Llamar a la función una vez al inicio para mostrar los valores iniciales
+        actualizarPuntajes();
+    </script>
+</body>
+</html>
