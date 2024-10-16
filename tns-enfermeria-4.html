@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauta de Evaluación Práctica I</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="number"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        .firma {
+            border-top: 1px solid #000;
+            margin-top: 50px;
+            padding-top: 10px;
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>PAUTA DE EVALUACIÓN PRÁCTICA I</h1>
+    <h2>TÉCNICO NIVEL SUPERIOR EN ENFERMERÍA</h2>
+
+    <p>Los presentes instrumentos de evaluación deberán ser aplicados a cada estudiante que asista a práctica y exponga un caso clínico. Para cumplir el objetivo de esta práctica, la/el estudiante deberá permanecer 24 horas en esterilización, 24 horas en atención primaria y 24 horas en atención en Enfermería básica clínica, logrando las 72 horas que comprende esta asignatura. Se exige para aprobar el 100% de asistencia.</p>
+
+    <h2>I. Identificación del/la estudiante</h2>
+    <table>
+        <tr>
+            <td>Nombre:</td>
+            <td><input type="text" id="nombre"></td>
+            <td>Fecha:</td>
+            <td><input type="date" id="fecha"></td>
+        </tr>
+        <tr>
+            <td>Servicio:</td>
+            <td><input type="text" id="servicio"></td>
+        </tr>
+        <tr>
+            <td>Campo clínico:</td>
+            <td><input type="text" id="campo_clinico"></td>
+        </tr>
+        <tr>
+            <td>Docente clínica:</td>
+            <td><input type="text" id="docente_clinica"></td>
+        </tr>
+        <tr>
+            <td>Docente universidad:</td>
+            <td><input type="text" id="docente_universidad"></td>
+        </tr>
+    </table>
+
+    <h2>II. Pauta de evaluación:</h2>
+
+    <table id="evaluacion">
+        <tr>
+            <th>Dimensiones</th>
+            <th>Criterios de evaluación</th>
+            <th>Niveles de logro (0-4)</th>
+        </tr>
+        <!-- Aspectos formales -->
+        <tr>
+            <td rowspan="7">Aspectos formales</td>
+            <td>Cumple con asistencia y horarios establecidos, justifica inasistencias según reglamento.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="formal"></td>
+        </tr>
+        <tr>
+            <td>Demuestra una correcta y coherente presentación personal para el ejercicio de su especialidad.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="formal"></td>
+        </tr>
+        <tr>
+            <td>Acepta la supervisión y demuestra interés por el trabajo desempeñado, el cual se realiza de forma adecuada y coherente.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="formal"></td>
+        </tr>
+        <tr>
+            <td>Maneja normas vigentes de técnicas y procedimientos específicos de su especialidad.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="formal"></td>
+        </tr>
+        <tr>
+            <td>Utiliza un proceso de atención adecuado según las competencias asociadas a su especialidad.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="formal"></td>
+        </tr>
+        <tr>
+            <td>Desempeña sus labores según la norma administrativas del Centro Clínico.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="formal"></td>
+        </tr>
+        <tr>
+            <td>Utiliza lenguaje técnico durante el transcurso de la práctica y/o internado.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="formal"></td>
+        </tr>
+        <!-- Aspectos Técnicos-profesionales -->
+        <tr>
+            <td rowspan="14">Aspectos Técnicos-profesionales</td>
+            <td>Identifica los servicios de apoyo clínico más utilizados conociendo su ubicación y finalidad según necesidad del paciente.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="tecnico"></td>
+        </tr>
+        <tr>
+            <td>Distingue adecuadamente los materiales y equipos utilizados en la especialidad.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="tecnico"></td>
+        </tr>
+        <tr>
+            <td>Utiliza recursos del servicio de forma adecuada y según indicaciones del/la supervisor/a.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="tecnico"></td>
+        </tr>
+        <tr>
+            <td>Reconoce las técnicas en la obtención de información del paciente desde una adecuada anamnesis en la atención de paciente</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="tecnico"></td>
+        </tr>
+        <tr>
+            <td>Maneja las normas de asepsia, antisepsia y precauciones universales en cada técnica de procedimiento.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="tecnico"></td>
+        </tr>
+        <tr>
+            <td>Mantiene la privacidad del cliente y su familia durante la atención del paciente.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="tecnico"></td>
+        </tr>
+        <tr>
+            <td>Reconoce la delimitación de áreas en esterilización y el correcto manejo de material contaminado, limpio y estéril.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="tecnico"></td>
+        </tr>
+        <tr>
+            <td>Colabora en la recepción y entrega de material, según indicación del/la profesional a cargo.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="tecnico"></td>
+        </tr>
+        <tr>
+            <td>Prepara insumos médicos según el procedimiento a realizar y las indicaciones por el/la profesional a cargo.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="tecnico"></td>
+        </tr>
+        <tr>
+            <td>Prepara material de uso clínico: Apósitos, tórulas, gasas según técnica establecida en su manejo.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="tecnico"></td>
+        </tr>
+        <tr>
+            <td>Organiza la documentación establecida para los diferentes procesos de atención de los usuarios.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="tecnico"></td>
+        </tr>
+        <tr>
+            <td>Colabora con profesionales en la atención de su especialidad, ejecutando las indicaciones entregadas y con una actitud proactiva y humanizada</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="tecnico"></td>
+        </tr>
+        <tr>
+            <td>Realiza entrega de información y exámenes al usuario/a de forma oportuna y fortalece la labor de la atención primaria.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="tecnico"></td>
+        </tr>
+        <tr>
+            <td>Ejecuta un correcto lavado de manos y uso de guantes para desarrollar antes y después de cualquier tipo de procedimiento</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="tecnico"></td>
+        </tr>
+        <!-- Dimensión competencias genéricas y sello -->
+        <tr>
+            <td rowspan="9">Dimensión competencias genéricas y sello</td>
+            <td>Aplica habilidades de liderazgo en el ejercicio de sus actividades, favoreciendo la resolución de problemas y el trabajo en equipo.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td>Se comunica efectivamente con sus compañeros/as y sus superiores, exponiendo de forma clara y concreta sus argumentos, escuchando activamente y transmitiendo la información de forma entendible y empática.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td>Organiza tareas a corto y largo plazo, priorizando las actividades que requieran urgencia.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td>Realiza un trabajo colaborativo con sus compañeros/as y superiores, promoviendo la proactividad y el desarrollo de las metas comunes.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td>Resuelve problemáticas propias de su quehacer, considerando los protocolos, manuales y reglamentación vigente.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td>Utiliza un pensamiento crítico en la toma de decisiones, argumentado sus ideas y propuestas.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td>Aplica la ética profesional en su quehacer dentro del centro de práctica.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td>Respeta los derechos humanos en cada una de las situaciones y actividades desarrolladas dentro del centro de práctica.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+        <tr>
+            <td>Valora el respeto por el entorno natural en el que se encuentra el centro de práctica en el que se desempeña.</td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="generica"></td>
+        </tr>
+    </table>
+
+    <h2>RETROALIMENTACIÓN AL ESTUDIANTE:</h2>
+    <textarea id="retroalimentacion" rows="4" cols="50"></textarea>
+
+    <h2>OBSERVACIONES:</h2>
+    <textarea id="observaciones" rows="4" cols="50"></textarea>
+
+    <h2>RESUMEN DE LA EVALUACIÓN:</h2>
+    <table id="resumen">
+        <tr>
+            <th>Dimensión</th>
+            <th>Ponderación</th>
+            <th>Puntaje obtenido</th>
+        </tr>
+        <tr>
+            <td>1. Aspectos formales</td>
+            <td>30%</td>
+            <td id="puntaje_formal">0</td>
+        </tr>
+        <tr>
+            <td>2. Aspectos Técnicos-profesionales</td>
+            <td>40%</td>
+            <td id="puntaje_tecnico">0</td>
+        </tr>
+        <tr>
+            <td>3. Dimensión competencias genéricas y sello</td>
+            <td>30%</td>
+            <td id="puntaje_generica">0</td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>Nota obtenida (escala 1-7)</strong></td>
+            <td id="nota_final">1.0</td>
+        </tr>
+    </table>
+
+    <div class="firma">
+        <p>Firma estudiante: ____________________</p>
+    </div>
+    <div class="firma">
+        <p>Firma docente supervisor: ____________________</p>
+    </div>
+
+    <button class="no-print" onclick="window.print()">Imprimir / Guardar como PDF</button>
+
+    <script>
+        document.addEventListener('input', function(e) {
+            if (e.target.classList.contains('puntaje')) {
+                calcularPuntajes();
+            }
+        });
+
+        function calcularPuntajes() {
+            let dimensiones = {
+                'formal': { sum: 0, count: 0, weight: 0.3 },
+                'tecnico': { sum: 0, count: 0, weight: 0.4 },
+                'generica': { sum: 0, count: 0, weight: 0.3 }
+            };
+
+            document.querySelectorAll('.puntaje').forEach(function(input) {
+                let dimension = input.dataset.dimension;
+                let value = parseFloat(input.value);
+                if (!isNaN(value) && value !== 0) {
+                    dimensiones[dimension].sum += value;
+                    dimensiones[dimension].count++;
+                }
+            });
+
+            let notaFinal = 0;
+            for (let dim in dimensiones) {
+                let promedio = dimensiones[dim].count > 0 ? dimensiones[dim].sum / dimensiones[dim].count : 0;
+                let puntajePonderado = promedio * dimensiones[dim].weight;
+                notaFinal += puntajePonderado;
+                document.getElementById('puntaje_' + dim).textContent = promedio.toFixed(2);
+            }
+
+            // Convertir a escala 1-7
+            notaFinal = (notaFinal / 4) * 6 + 1;
+            notaFinal = Math.min(Math.max(notaFinal, 1), 7); // Asegurar que esté entre 1 y 7
+            document.getElementById('nota_final').textContent = notaFinal.toFixed(1);
+        }
+    </script>
+</body>
+</html>
