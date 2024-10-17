@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauta de Evaluación Internado - Terapia Ocupacional</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="number"], input[type="text"], input[type="date"] {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Internado - Carrera de Terapia Ocupacional</h1>
+    <h2>Pauta de evaluación</h2>
+
+    <h3>I. Descripción de los niveles de logro</h3>
+    <table>
+        <tr>
+            <th>Concepto</th>
+            <th>Nivel 0</th>
+            <th>Nivel 1</th>
+            <th>Nivel 2</th>
+            <th>Nivel 3</th>
+            <th>Nivel 4</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td>NO OBSERVADO/ NO APLICA</td>
+            <td>INSUFICIENTE</td>
+            <td>ELEMENTAL</td>
+            <td>BUENO</td>
+            <td>EXCELENTE</td>
+        </tr>
+        <tr>
+            <td>Puntaje asociado</td>
+            <td>0 pts.</td>
+            <td>1 pts.</td>
+            <td>2 pts.</td>
+            <td>3 pts.</td>
+            <td>4 pts.</td>
+        </tr>
+    </table>
+
+    <h3>II. Identificación del/la estudiante</h3>
+    <table>
+        <tr>
+            <td>Nombre:</td>
+            <td><input type="text" id="nombreEstudiante"></td>
+            <td>Fecha:</td>
+            <td><input type="date" id="fecha"></td>
+        </tr>
+        <tr>
+            <td>Servicio:</td>
+            <td><input type="text" id="servicio"></td>
+        </tr>
+        <tr>
+            <td>Campo clínico:</td>
+            <td><input type="text" id="campoClinico"></td>
+        </tr>
+        <tr>
+            <td>Docente clínica:</td>
+            <td><input type="text" id="docenteClinica"></td>
+        </tr>
+        <tr>
+            <td>Docente universidad:</td>
+            <td><input type="text" id="docenteUniversidad"></td>
+        </tr>
+    </table>
+
+    <h3>III. Pauta de evaluación de desempeño Internado I:</h3>
+    <table id="evaluationTable">
+        <tr>
+            <th>Dimensión</th>
+            <th>Criterios de evaluación</th>
+            <th>0</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>Total</th>
+        </tr>
+        <!-- Las filas se llenarán dinámicamente con JavaScript -->
+    </table>
+
+    <h3>Observaciones y/o sugerencias:</h3>
+    <textarea id="observaciones"></textarea>
+
+    <h3>Resumen de la Evaluación:</h3>
+    <table id="summaryTable">
+        <tr>
+            <th>Dimensión</th>
+            <th>Ponderación</th>
+            <th>Puntaje obtenido</th>
+            <th>Puntaje ponderado</th>
+        </tr>
+        <!-- Las filas se llenarán dinámicamente con JavaScript -->
+    </table>
+
+    <p>Nota obtenida (1-7): <span id="finalGrade" class="result"></span></p>
+
+    <script>
+        const evaluationData = [
+            {
+                dimension: "CONDUCTUAL Y PERSONAL",
+                criterios: [
+                    "Demuestra asistencia y puntualidad acorde con la exigencia",
+                    "Demuestra presentación personal de acuerdo con estándares establecidos",
+                    "Utiliza lenguaje adecuado con docente asistencial y usuarios/as",
+                    "Demuestra iniciativa y proactividad en su quehacer",
+                    "Mantiene relaciones interpersonales armónicas tanto con sus pacientes como con el equipo de trabajo",
+                    "Respeta la jerarquía y expresa de forma adecuada sus discrepancias",
+                    "Enmarca su quehacer con vocación de servicio",
+                    "Acepta la supervisión como una instancia de aprendizaje y demuestra interés en consultar a docente asistencial",
+                    "Realiza uso cuidadoso y ordenado de material, equipos e insumos",
+                    "Identifica su rol, reconociendo funciones propias y de colaboración a otros/as profesionales"
+                ],
+                ponderacion: 0.10
+            },
+            {
+                dimension: "ASPECTOS PROFESIONALES",
+                criterios: [
+                    "Utiliza lenguaje técnico adecuado",
+                    "Maneja conceptos de las patologías con las que se enfrenta",
+                    "Maneja conceptos de ocupación y AVD",
+                    "Maneja modelos de intervención y sus estrategias",
+                    "Identifica componentes de la evaluación de un usuario/a",
+                    "Asocia sintomatología y sinología relatada con anatomo patología y fisiopatología básica",
+                    "Integra los hallazgos obtenidos en la evaluación del/la usuario/a formulando hipótesis diagnóstica",
+                    "Maneja conceptos de intervención de Terapia Ocupacional en función de la patología.",
+                    "Realiza adecuadamente planteamiento de objetivos general, específicos y operacionales",
+                    "Plantea plan de tratamiento acorde a los hallazgos encontrados y al estado de evolución del/la usuario/a"
+                ],
+                ponderacion: 0.30
+            },
+            {
+                dimension: "MANEJO DE CONOCIMIENTO",
+                criterios: [
+                    "Desarrolla los contenidos en forma adecuada, con la complejidad y profundidad requerida por el tema.",
+                    "La evaluación realizada del/la usuario/a es completa y correctamente realizada",
+                    "Las evaluaciones realizadas son acordes a las necesidades del caso.",
+                    "Los objetivos planteados, general y específicos, son correctos y congruentes con la evaluación presentada",
+                    "El tratamiento realizado está acorde con la evaluación realizada y con los objetivos planteados a corto y largo plazo",
+                    "El tratamiento realizado es pertinente a las características propias del/la usuario/a y su patología.",
+                    "Se expresa con fluidez, coherencia y claridad al exponer. Utiliza lenguaje acorde a su nivel.",
+                    "Demuestra dominio del tema y explica sin necesidad de leer.",
+                    "Existe un material de apoyo que motiva la atención. Es ordenado y completo. Es pertinente al tema.",
+                    "Responde preguntas de forma completa, clara y concisa.",
+                    "Utiliza la ficha clínica y registros del/la usuario/a forma adecuada, clara y ordenada.",
+                    "Logra identificar aspectos relevantes de la historia clínica desde los registros del/la usuario/a.",
+                    "Logra identificar aspectos relevantes de la historia clínica desde la entrevista del/la usuario/a.",
+                    "Realiza anamnesis próxima y remota de forma correcta, ordenada y completa.",
+                    "Realiza adecuada y correctamente las técnicas de evaluación.",
+                    "Demuestra seguridad y destreza en el proceso de evaluación.",
+                    "Realiza adecuada y correctamente las técnicas de intervención de Terapia Ocupacional.",
+                    "Demuestra seguridad y destreza en la fase de tratamiento de Terapia Ocupacional.",
+                    "Mantiene postura adecuada del/la usuario/a durante la evaluación y tratamiento.",
+                    "Realiza presentación del/la usuario/a de forma ordenada y utilizando lenguaje técnico."
+                ],
+                ponderacion: 0.50
+            },
+            {
+                dimension: "SELLO INSTITUCIONAL",
+                criterios: [
+                    "Capacidad para implementar soluciones de manera creativa, innovadora y proactiva",
+                    "Capacidad para arribar a decisiones consensuadas",
+                    "Identifica las causas de los problemas de su ámbito profesional y sus posibles efectos organizacionales.",
+                    "Busca posibles estrategias de solución a problemas de su ámbito profesional, de forma colaborativa.",
+                    "Toma decisiones profesionales en equipo para solucionar problemas y hacer frente a situaciones propias del ámbito laboral."
+                ],
+                ponderacion: 0.10
+            }
+        ];
+
+        function populateTable() {
+            const table = document.getElementById("evaluationTable");
+            evaluationData.forEach((dimension, index) => {
+                dimension.criterios.forEach((criterio, criterioIndex) => {
+                    const row = table.insertRow();
+                    if (criterioIndex === 0) {
+                        const dimensionCell = row.insertCell();
+                        dimensionCell.textContent = dimension.dimension;
+                        dimensionCell.rowSpan = dimension.criterios.length;
+                    }
+                    const criterioCell = row.insertCell();
+                    criterioCell.textContent = criterio;
+                    for (let i = 0; i <= 4; i++) {
+                        const radioCell = row.insertCell();
+                        const radio = document.createElement("input");
+                        radio.type = "radio";
+                        radio.name = `d${index}c${criterioIndex}`;
+                        radio.value = i;
+                        radio.addEventListener("change", updateGrades);
+                        radioCell.appendChild(radio);
+                    }
+                    const totalCell = row.insertCell();
+                    totalCell.className = "result";
+                });
+            });
+        }
+
+        function updateGrades() {
+            const table = document.getElementById("evaluationTable");
+            const summaryTable = document.getElementById("summaryTable");
+            summaryTable.innerHTML = "<tr><th>Dimensión</th><th>Ponderación</th><th>Puntaje obtenido</th><th>Puntaje ponderado</th></tr>";
+
+            let finalScore = 0;
+
+            evaluationData.forEach((dimension, dimensionIndex) => {
+                let dimensionSum = 0;
+                let dimensionCount = 0;
+
+                dimension.criterios.forEach((criterio, criterioIndex) => {
+                    const radios = document.getElementsByName(`d${dimensionIndex}c${criterioIndex}`);
+                    let selectedValue = 0;
+                    for (const radio of radios) {
+                        if (radio.checked) {
+                            selectedValue = parseInt(radio.value);
+                            break;
+                        }
+                    }
+
+                    if (selectedValue > 0 || selectedValue === 0) {
+                        const row = table.rows[dimensionCount + criterioIndex + 1];
+                        const totalCell = row.cells[row.cells.length - 1];
+                        totalCell.textContent = selectedValue;
+
+                        dimensionSum += selectedValue;
+                        dimensionCount++;
+                    }
+                });
+
+                if (dimensionCount > 0) {
+                    const dimensionAverage = dimensionSum / dimensionCount;
+                    const ponderatedScore = dimensionAverage * dimension.ponderacion;
+                    finalScore += ponderatedScore;
+
+                    const row = summaryTable.insertRow();
+                    row.insertCell().textContent = dimension.dimension;
+                    row.insertCell().textContent = (dimension.ponderacion * 100) + "%";
+                    row.insertCell().textContent = dimensionAverage.toFixed(2);
+                    row.insertCell().textContent = ponderatedScore.toFixed(2);
+                }
+            });
+
+            const finalGrade = convertToSevenPointScale(finalScore);
+            document.getElementById("finalGrade").textContent = finalGrade.toFixed(1);
+        }
+
+        function convertToSevenPointScale(score) {
+            const maxScore = 4;
+            const percentage = (score / maxScore) * 100;
+            
+            if (percentage < 50) {
+                return 1 + (percentage / 50) * 2;
+            } else {
+                return 3 + ((percentage - 50) / 50) * 4;
+            }
+        }
+
+        window.onload = function() {
+            populateTable();
+            updateGrades();
+        };
+    </script>
+</body>
+</html>
