@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Jurídica: Pauta de Evaluación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="number"] {
+            width: 50px;
+        }
+        .result {
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clínica Jurídica: Ejercicio de Primera Entrevista</h1>
+    <h2>Pauta de evaluación</h2>
+
+    <h3>I. Descripción de los niveles de logro</h3>
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>Significado</th>
+            <th>Rango de notas</th>
+            <th>Contenido</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Malo / Deficiente / Insuficiente</td>
+            <td>1 al 3.9</td>
+            <td>El estudiante no realiza las acciones esperadas y/o las realiza de forma insipiente, evidenciando el bajo cumplimiento de los estándares mínimos de desempeño profesional.</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Suficiente</td>
+            <td>4 al 4.9</td>
+            <td>El estudiante realiza las acciones mínimas aceptables y/o su ejecución es medianamente logrado pudiendo certificar que se ajusta al desempeño profesional, pero de manera mínima.</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Bueno</td>
+            <td>5 al 5.9</td>
+            <td>El estudiante realiza las acciones necesarias para un buen desempeño profesional ajustándose a un estándar de calidad y adecuado.</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Muy bueno / Sobresaliente</td>
+            <td>6 al 7</td>
+            <td>El desempeño del estudiante excede las expectativas y cumple, con buena calidad, las acciones identificadas en cada dimensión evaluativa.</td>
+        </tr>
+    </table>
+
+    <h3>II. Antecedentes generales</h3>
+    <table>
+        <tr>
+            <td>Fecha:</td>
+            <td><input type="date" id="fecha"></td>
+        </tr>
+        <tr>
+            <td>Estudiante:</td>
+            <td><input type="text" id="estudiante"></td>
+        </tr>
+        <tr>
+            <td>Caso:</td>
+            <td><input type="text" id="caso"></td>
+        </tr>
+        <tr>
+            <td>Acción:</td>
+            <td><input type="text" id="accion"></td>
+        </tr>
+        <tr>
+            <td>Observador:</td>
+            <td><input type="text" id="observador"></td>
+        </tr>
+    </table>
+
+    <h3>III. Escala de apreciación</h3>
+    <table id="evaluationTable">
+        <tr>
+            <th>Dimensión</th>
+            <th>Criterios</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>Nota por Criterio</th>
+        </tr>
+        <!-- Las filas se llenarán dinámicamente con JavaScript -->
+    </table>
+
+    <h3>IV. Observaciones</h3>
+    <textarea id="observaciones"></textarea>
+
+    <h3>V. Resumen de la Evaluación</h3>
+    <table id="summaryTable">
+        <tr>
+            <th>Dimensión</th>
+            <th>Promedio por dimensión</th>
+        </tr>
+        <!-- Las filas se llenarán dinámicamente con JavaScript -->
+    </table>
+
+    <p>Calificación final: <span id="finalGrade" class="result"></span></p>
+
+    <script>
+        const evaluationData = [
+            {
+                dimension: "I- Aspectos Formales",
+                criteria: [
+                    "El lugar para la entrevista es apropiado y se encuentra limpio.",
+                    "Saluda al cliente y se presenta.",
+                    "Utiliza una presentación personal apropiada para la atención de público.",
+                    "Utiliza un comportamiento educado y cortés con el cliente."
+                ]
+            },
+            {
+                dimension: "II- Preparación de la Entrevista",
+                criteria: [
+                    "Conoce el derecho aplicable al caso.",
+                    "Define sus objetivos de información.",
+                    "Preparadas preguntas básicas."
+                ]
+            },
+            {
+                dimension: "III-Desarrollo de la Entrevista",
+                criteria: [
+                    "Adecuado inicio de la entrevista con preguntas de contexto o de vínculo.",
+                    "Adecuada expresión de empatía ante momentos de mayor emocionalidad.",
+                    "Aplica apropiadamente la secuencia comunicacional.",
+                    "Usa adecuadamente las preguntas abiertas.",
+                    "Usa adecuadamente las preguntas cerradas o de precisión.",
+                    "Usa adecuadamente las preguntas circulares.",
+                    "Usa adecuadamente el parafraseo.",
+                    "Realiza preguntas coherentes con los objetivos de información.",
+                    "Se expresa de manera comprensible para el cliente.",
+                    "Considera un tiempo adecuado y apropiado para el termino de la entrevista."
+                ]
+            },
+            {
+                dimension: "IV-Información dada al Cliente",
+                criteria: [
+                    "Explica al cliente el trabajo que se puede realizar por él y los límites de éste.",
+                    "Explica, en términos claros, el diagnóstico jurídico del caso. En caso de ser necesarios, se informa que se requiere mayor estudio o antecedentes antes de hacer una evaluación.",
+                    "Explica, en términos claros, las diferentes vías de intervención del caso señalando sus ventajas y debilidades.",
+                    "Fomenta la autonomía del cliente, de tal manera que tome decisiones de manera informada e independiente.",
+                    "Evita mencionar resultados al cliente o bien, señalar plazos de manera categórica.",
+                    "Informa al cliente sobre la forma de trabajo y los pasos a seguir.",
+                    "Informa al cliente la forma de comunicación (datos de contacto, horarios de atención, etc.).",
+                    "Informa sobre los costos de la gestión y la forma de pagarlos (honorarios, costos de tramitación).",
+                    "Reitera con el cliente los acuerdos adoptados mutuamente."
+                ]
+            },
+            {
+                dimension: "V-Comprensión de la Información Obtenida por la Entrevista",
+                criteria: [
+                    "Reconoce documentación adecuada de la entrevista.",
+                    "Identifica del conflicto jurídico del caso.",
+                    "Identifica de la posición e interés de su cliente.",
+                    "Identifica los antecedentes adicionales que requiere para el estudio del caso."
+                ]
+            }
+        ];
+
+        function populateTable() {
+            const table = document.getElementById("evaluationTable");
+            evaluationData.forEach((dimension, index) => {
+                dimension.criteria.forEach((criterion, criterionIndex) => {
+                    const row = table.insertRow();
+                    if (criterionIndex === 0) {
+                        const dimensionCell = row.insertCell();
+                        dimensionCell.textContent = dimension.dimension;
+                        dimensionCell.rowSpan = dimension.criteria.length;
+                    }
+                    const criterionCell = row.insertCell();
+                    criterionCell.textContent = criterion;
+                    for (let i = 1; i <= 4; i++) {
+                        const radioCell = row.insertCell();
+                        const radio = document.createElement("input");
+                        radio.type = "radio";
+                        radio.name = `d${index}c${criterionIndex}`;
+                        radio.value = i;
+                        radio.addEventListener("change", updateGrades);
+                        radioCell.appendChild(radio);
+                    }
+                    const gradeCell = row.insertCell();
+                    gradeCell.className = "result";
+                });
+            });
+        }
+
+        function updateGrades() {
+            const table = document.getElementById("evaluationTable");
+            const summaryTable = document.getElementById("summaryTable");
+            summaryTable.innerHTML = "<tr><th>Dimensión</th><th>Promedio por dimensión</th></tr>";
+
+            let totalSum = 0;
+            let totalCount = 0;
+
+            evaluationData.forEach((dimension, dimensionIndex) => {
+                let dimensionSum = 0;
+                let dimensionCount = 0;
+
+                dimension.criteria.forEach((criterion, criterionIndex) => {
+                    const radios = document.getElementsByName(`d${dimensionIndex}c${criterionIndex}`);
+                    let selectedValue = 0;
+                    for (const radio of radios) {
+                        if (radio.checked) {
+                            selectedValue = parseInt(radio.value);
+                            break;
+                        }
+                    }
+
+                    if (selectedValue > 0) {
+                        const row = table.rows[totalCount + criterionIndex + 1];
+                        const gradeCell = row.cells[row.cells.length - 1];
+                        const grade = calculateGrade(selectedValue);
+                        gradeCell.textContent = grade.toFixed(1);
+
+                        dimensionSum += grade;
+                        dimensionCount++;
+                        totalSum += grade;
+                        totalCount++;
+                    }
+                });
+
+                if (dimensionCount > 0) {
+                    const dimensionAverage = dimensionSum / dimensionCount;
+                    const row = summaryTable.insertRow();
+                    const dimensionCell = row.insertCell();
+                    dimensionCell.textContent = dimension.dimension;
+                    const averageCell = row.insertCell();
+                    averageCell.textContent = dimensionAverage.toFixed(2);
+                    averageCell.className = "result";
+                }
+            });
+
+            if (totalCount > 0) {
+                const finalGrade = totalSum / totalCount;
+                document.getElementById("finalGrade").textContent = finalGrade.toFixed(2);
+            } else {
+                document.getElementById("finalGrade").textContent = "N/A";
+            }
+        }
+
+        function calculateGrade(value) {
+            switch (value) {
+                case 1: return 1 + Math.random() * 2.9;
+                case 2: return 4 + Math.random() * 0.9;
+                case 3: return 5 + Math.random() * 0.9;
+                case 4: return 6 + Math.random();
+                default: return 0;
+            }
+        }
+
+        window.onload = function() {
+            populateTable();
+            updateGrades();
+        };
+    </script>
+</body>
+</html>
