@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauta de Evaluación Caso Clínico Conocido - Carrera de Kinesiología</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .nota-final {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>PAUTA DE EVALUACIÓN CASO CLÍNICO CONOCIDO</h1>
+    <h2>Carrera de Kinesiología</h2>
+
+    <div class="section">
+        <h2>I. Identificación del/la estudiante</h2>
+        <table>
+            <tr>
+                <td>Nombre del/la estudiante:</td>
+                <td><input type="text" id="nombre_estudiante"></td>
+                <td>Fecha:</td>
+                <td><input type="date" id="fecha"></td>
+            </tr>
+            <tr>
+                <td>Nombre kinesiólogo/a evaluador/a:</td>
+                <td><input type="text" id="nombre_evaluador"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>II. Pauta de evaluación de desempeño:</h2>
+        <table id="evaluacion">
+            <tr>
+                <th>Dimensión</th>
+                <th>Criterios de evaluación</th>
+                <th>Niveles de logro (0-4)</th>
+            </tr>
+            <tr>
+                <td rowspan="7">Conductual y personal</td>
+                <td>Demuestra interés en la búsqueda de oportunidades de aprendizaje.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+            </tr>
+            <tr>
+                <td>Demuestra autocrítica en el desarrollo de sus actividades.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+            </tr>
+            <tr>
+                <td>Reconoce opiniones constructivas de parte de la supervisión del/la docente.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+            </tr>
+            <tr>
+                <td>Presenta buen factor explicativo y de locución durante la presentación</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+            </tr>
+            <tr>
+                <td>Presenta apoyo visual acorde a lo presentado</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+            </tr>
+            <tr>
+                <td>Utiliza el uniforme según normativa establecidas, respetando la reglamentación del servicio clínico.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+            </tr>
+            <tr>
+                <td>Utiliza lenguaje kinésico apropiado durante presentación</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+            </tr>
+            <tr>
+                <td rowspan="6">Evaluación integral; desempeño y competencias</td>
+                <td>El título de presentación es adecuado al caso.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral"></td>
+            </tr>
+            <tr>
+                <td>Presenta marco teórico con información actualizada</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral"></td>
+            </tr>
+            <tr>
+                <td>Emplea datos epidemiológicos actuales relacionados al tema</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral"></td>
+            </tr>
+            <tr>
+                <td>Utiliza orden semiológico según ficha kinésica</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral"></td>
+            </tr>
+            <tr>
+                <td>Refuerza sus conocimientos con información de medicina basada en evidencia (búsqueda de apoyo bibliográfico)</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral"></td>
+            </tr>
+            <tr>
+                <td>Corrige sus errores ante la sugerencia de su supervisor/a y se da cuenta de su propio aprendizaje.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral"></td>
+            </tr>
+            <tr>
+                <td rowspan="4">Dominio y gestión de conocimientos generales y técnicos</td>
+                <td>Conoce y aplica escalas o rangos de evaluación kinesiológica</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_conocimientos"></td>
+            </tr>
+            <tr>
+                <td>Responde con propiedad las preguntas planteadas por equipo evaluador</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_conocimientos"></td>
+            </tr>
+            <tr>
+                <td>Plantea un enfoque kinésico adecuado (objetivos y tratamiento)</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_conocimientos"></td>
+            </tr>
+            <tr>
+                <td>Presenta buena conclusión del tema con énfasis rehabilitador.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_conocimientos"></td>
+            </tr>
+            <tr>
+                <td rowspan="2">Sello institucional</td>
+                <td>Capacidad para implementar soluciones de manera creativa, innovadora y proactiva</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="sello_institucional"></td>
+            </tr>
+            <tr>
+                <td>Identifica las causas de los problemas de su ámbito profesional y sus posibles efectos organizacionales.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="sello_institucional"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Observaciones y/o sugerencias:</h2>
+        <textarea id="observaciones"></textarea>
+    </div>
+
+    <div class="section">
+        <h2>RESUMEN DE LA EVALUACIÓN:</h2>
+        <table id="resumen">
+            <tr>
+                <th>Dimensión</th>
+                <th>Ponderación</th>
+                <th>Puntaje obtenido (0-4)</th>
+                <th>Nota ponderada (1-7)</th>
+            </tr>
+            <tr>
+                <td>1. Conductual y personal</td>
+                <td>10%</td>
+                <td id="puntaje_conductual_personal"></td>
+                <td id="nota_conductual_personal"></td>
+            </tr>
+            <tr>
+                <td>2. Evaluación integral; desempeño y competencias</td>
+                <td>30%</td>
+                <td id="puntaje_evaluacion_integral"></td>
+                <td id="nota_evaluacion_integral"></td>
+            </tr>
+            <tr>
+                <td>3. Dominio y gestión de conocimientos generales y técnicos</td>
+                <td>50%</td>
+                <td id="puntaje_dominio_conocimientos"></td>
+                <td id="nota_dominio_conocimientos"></td>
+            </tr>
+            <tr>
+                <td>4. Sello institucional</td>
+                <td>10%</td>
+                <td id="puntaje_sello_institucional"></td>
+                <td id="nota_sello_institucional"></td>
+            </tr>
+        </table>
+        <p>Nota obtenida (escala 1-7): <span id="nota_final" class="nota-final"></span></p>
+    </div>
+
+    <script>
+        const notas = document.querySelectorAll('.nota');
+        const puntajes = {
+            conductual_personal: 0,
+            evaluacion_integral: 0,
+            dominio_conocimientos: 0,
+            sello_institucional: 0
+        };
+
+        const ponderaciones = {
+            conductual_personal: 0.1,
+            evaluacion_integral: 0.3,
+            dominio_conocimientos: 0.5,
+            sello_institucional: 0.1
+        };
+
+        function actualizarPuntajes() {
+            let notaFinal = 0;
+
+            for (const dimension in puntajes) {
+                const notasDimension = document.querySelectorAll(`.nota[data-dimension="${dimension}"]`);
+                let suma = 0;
+                let contador = 0;
+                notasDimension.forEach(nota => {
+                    const valor = parseFloat(nota.value);
+                    if (!isNaN(valor) && valor !== 0) {
+                        suma += valor;
+                        contador++;
+                    }
+                });
+                if (contador > 0) {
+                    puntajes[dimension] = suma / contador;
+                } else {
+                    puntajes[dimension] = 0;
+                }
+                const puntajeElement = document.getElementById(`puntaje_${dimension}`);
+                const notaElement = document.getElementById(`nota_${dimension}`);
+                if (puntajeElement) puntajeElement.textContent = puntajes[dimension].toFixed(2);
+                
+                // Convertir puntaje (0-4) a nota (1-7) y aplicar ponderación
+                const notaDimension = ((puntajes[dimension] * 1.5) + 1) * ponderaciones[dimension];
+                if (notaElement) notaElement.textContent = notaDimension.toFixed(2);
+                
+                notaFinal += notaDimension;
+            }
+
+            // Asegurar que la nota final esté en el rango 1-7
+            notaFinal = Math.max(1, Math.min(7, notaFinal));
+            
+            document.getElementById('nota_final').textContent = notaFinal.toFixed(2);
+
+            // Verificar si alguna nota es inferior a 4.0 en la escala 1-7
+            let reprobado = false;
+            notas.forEach(nota => {
+                const valor = parseFloat(nota.value);
+                if (!isNaN(valor) && valor !== 0) {
+                    const notaEscala17 = Math.min(Math.max((valor * 1.5) + 1, 1), 7);
+                    if (notaEscala17 < 4.0) {
+                        reprobado = true;
+                    }
+                }
+            });
+
+            if (reprobado) {
+                alert('El estudiante ha reprobado el Caso Clínico Conocido debido a que tiene al menos un ítem con nota inferior a 4.0');
+            }
+        }
+
+        notas.forEach(nota => {
+            nota.addEventListener('input', actualizarPuntajes);
+        });
+
+        // Llamar a la función una vez al inicio para mostrar los valores iniciales
+        actualizarPuntajes();
+    </script>
+</body>
+</html>
