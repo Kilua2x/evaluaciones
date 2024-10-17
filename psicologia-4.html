@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauta de Evaluación Supervisor en Terreno - Psicología</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .nota-final {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pauta de Evaluación Supervisor en Terreno</h1>
+    <h2>Psicología</h2>
+
+    <div class="section">
+        <h2>I. Identificación del/la estudiante</h2>
+        <table>
+            <tr>
+                <td>Nombre:</td>
+                <td><input type="text" id="nombre"></td>
+                <td>Fecha:</td>
+                <td><input type="date" id="fecha"></td>
+            </tr>
+            <tr>
+                <td>Centro de práctica:</td>
+                <td><input type="text" id="centro_practica"></td>
+            </tr>
+            <tr>
+                <td>Supervisor en terreno:</td>
+                <td><input type="text" id="supervisor_terreno"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>II. Pauta de evaluación del desempeño:</h2>
+        <table id="evaluacion">
+            <tr>
+                <th>Dimensión evaluativa</th>
+                <th>Criterios de evaluación</th>
+                <th>Niveles de logro (0-4)</th>
+            </tr>
+            <!-- Aspectos formales -->
+            <tr>
+                <td rowspan="8">Aspectos formales</td>
+                <td>Asiste puntualmente a cada sesión de supervisión individual.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Asiste puntualmente a las sesiones de supervisión grupal.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Asiste a las sesiones de supervisión (grupales y/o individuales)</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Asiste a la Jornada de Inducción (inicio del semestre)</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Asiste a las actividades de formación complementaria (cursos de actualización)</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Cumple con la Normas y Reglamento Académico y de Prácticas Profesionales.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Respeta al entorno y contexto académico.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Resguarda su presentación Personal, siendo adecuada al contexto.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_formales"></td>
+            </tr>
+            <!-- Aspectos actitudinales -->
+            <tr>
+                <td rowspan="7">Aspectos actitudinales</td>
+                <td>Presenta oportunamente Proyecto de Práctica Profesional y la documentación para la inscripción de la actividad formativa.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_actitudinales"></td>
+            </tr>
+            <tr>
+                <td>Formaliza la presentación de un Plan de Trabajo en la Institución y es capaz de adaptarlo de acuerdo con las necesidades del centro de Práctica.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_actitudinales"></td>
+            </tr>
+            <tr>
+                <td>Incorpora las sugerencias y flexibilidad en su Plan de Trabajo y Calendarización.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_actitudinales"></td>
+            </tr>
+            <tr>
+                <td>Exhibe una capacidad de autocrítica que le permite la mejora continua de su proceso de aprendizaje.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_actitudinales"></td>
+            </tr>
+            <tr>
+                <td>Presenta capacidad para resolver problemas de manera asertiva, competente y profesional.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_actitudinales"></td>
+            </tr>
+            <tr>
+                <td>Establece relaciones de colaboración con sus pares y docente.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_actitudinales"></td>
+            </tr>
+            <tr>
+                <td>Exhibe conductas que dan cuenta de Iniciativa y autonomía.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_actitudinales"></td>
+            </tr>
+            <!-- Aspectos de desempeño -->
+            <tr>
+                <td rowspan="10">Aspectos de desempeño</td>
+                <td>Demuestra un adecuado manejo Conceptual implicado en el desempeño profesional. Se demuestra en la calidad de sus informes y avances.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_desempeno"></td>
+            </tr>
+            <tr>
+                <td>Evidencia capacidad de detección de necesidades propias en función de la práctica profesional. Se aprecia en la flexibilidad de su plan de trabajo y en los mecanismos de diagnóstico y evaluación permanente.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_desempeno"></td>
+            </tr>
+            <tr>
+                <td>Demuestra apertura frente a la búsqueda de capacitación a partir de las necesidades y/o debilidades percibidas.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_desempeno"></td>
+            </tr>
+            <tr>
+                <td>Elabora objetivos de trabajo que se traducen en actividades concretas.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_desempeno"></td>
+            </tr>
+            <tr>
+                <td>Relaciona actividades específicas con indicadores cuantitativos y/o cualitativos.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_desempeno"></td>
+            </tr>
+            <tr>
+                <td>Organiza su trabajo evidenciando de manera ordenada y sistemática los medios de verificación.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_desempeno"></td>
+            </tr>
+            <tr>
+                <td>Demuestra una conducta respetuosa, empática y regida por valores éticos que rigen la profesión.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_desempeno"></td>
+            </tr>
+            <tr>
+                <td>Fundamenta sus decisiones técnicas en función de objetivos.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_desempeno"></td>
+            </tr>
+            <tr>
+                <td>Demuestra calidad en los contenidos y formalidad de los trabajos presentados.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_desempeno"></td>
+            </tr>
+            <tr>
+                <td>Demuestra una forma de establecer relaciones profesionales basadas en una imagen y competencia profesional (personal branding) Ej. Correo personal, lenguaje de sus correos, etc.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_desempeno"></td>
+            </tr>
+            <!-- Aspectos Técnicos-Disciplinares -->
+            <tr>
+                <td rowspan="10">Aspectos Técnicos-Disciplinares</td>
+                <td>Aplica instrumentos e interpreta sus resultados.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Demuestra competencias para la integración de elementos contextuales en la realización del diagnóstico e intervención desde la disciplina.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Capacidad para redactar, plantear y reformular objetivos, actividades, formas de evaluación y decisiones técnicas desde un enfoque metodológico.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Capacidad para exponer casos y presentar información de manera integradora, crítica y autocrítica.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Presenta casos en reuniones de Supervisión y/o Equipo Multidisciplinario.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Realiza Informes concretos, ordenados, con adecuado nivel de integración, análisis y síntesis.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Utiliza, permanente, la normativa APA, licencia Creative Commons y otras conductas respetuosas con las normas de autor y buenas prácticas en los documentos académicos.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Capacidad para diseñar y ejecutar talleres en intervenciones grupales.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Capacidad para elaborar material complementario, protocolos o diseño de manuales o documentación técnica.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+            <tr>
+                <td>Desarrolla un registro ordenado y organizado de la evidencia documental de sus actuaciones profesionales.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="aspectos_tecnicos"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>OBSERVACIONES Y SUGERENCIAS:</h2>
+        <textarea id="observaciones"></textarea>
+    </div>
+
+    <div class="section">
+        <h2>RESUMEN DE LA EVALUACIÓN:</h2>
+        <table id="resumen">
+            <tr>
+                <th>Dimensión</th>
+                <th>Ponderación</th>
+                <th>Puntaje obtenido (0-4)</th>
+                <th>Nota ponderada (1-7)</th>
+            </tr>
+            <tr>
+                <td>Aspectos formales</td>
+                <td>20%</td>
+                <td id="puntaje_aspectos_formales"></td>
+                <td id="nota_aspectos_formales"></td>
+            </tr>
+            <tr>
+                <td>Aspectos actitudinales</td>
+                <td>20%</td>
+                <td id="puntaje_aspectos_actitudinales"></td>
+                <td id="nota_aspectos_actitudinales"></td>
+            </tr>
+            <tr>
+                <td>Aspectos de desempeño</td>
+                <td>30%</td>
+                <td id="puntaje_aspectos_desempeno"></td>
+                <td id="nota_aspectos_desempeno"></td>
+            </tr>
+            <tr>
+                <td>Aspectos Técnicos-Disciplinares</td>
+                <td>30%</td>
+                <td id="puntaje_aspectos_tecnicos"></td>
+                <td id="nota_aspectos_tecnicos"></td>
+            </tr>
+        </table>
+        <p>Nota obtenida (escala 1-7): <span id="nota_final" class="nota-final"></span></p>
+    </div>
+
+    <script>
+        const notas = document.querySelectorAll('.nota');
+        const puntajes = {
+            aspectos_formales: 0,
+            aspectos_actitudinales: 0,
+            aspectos_desempeno: 0,
+            aspectos_tecnicos: 0
+        };
+
+        const ponderaciones = {
+            aspectos_formales: 0.2,
+            aspectos_actitudinales: 0.2,
+            aspectos_desempeno: 0.3,
+            aspectos_tecnicos: 0.3
+        };
+
+        function actualizarPuntajes() {
+            let notaFinal = 0;
+
+            for (const dimension in puntajes) {
+                const notasDimension = document.querySelectorAll(`.nota[data-dimension="${dimension}"]`);
+                let suma = 0;
+                let contador = 0;
+                notasDimension.forEach(nota => {
+                    const valor = parseFloat(nota.value);
+                    if (!isNaN(valor) && valor !== 0) {
+                        suma += valor;
+                        contador++;
+                    }
+                });
+                if (contador > 0) {
+                    puntajes[dimension] = suma / contador;
+                } else {
+                    puntajes[dimension] = 0;
+                }
+                const puntajeElement = document.getElementById(`puntaje_${dimension}`);
+                const notaElement = document.getElementById(`nota_${dimension}`);
+                if (puntajeElement) puntajeElement.textContent = puntajes[dimension].toFixed(2);
+                
+                // Convertir puntaje (0-4) a nota (1-7) y aplicar ponderación
+                const notaDimension = ((puntajes[dimension] * 1.5) + 1) * ponderaciones[dimension];
+                if (notaElement) notaElement.textContent = notaDimension.toFixed(2);
+                
+                notaFinal += notaDimension;
+            }
+
+            // Asegurar que la nota final esté en el rango 1-7
+            notaFinal = Math.max(1, Math.min(7, notaFinal));
+            
+            document.getElementById('nota_final').textContent = notaFinal.toFixed(2);
+
+            // Verificar si alguna nota es inferior a 4.0 en la escala 1-7
+            let reprobado = false;
+            notas.forEach(nota => {
+                const valor = parseFloat(nota.value);
+                if (!isNaN(valor) && valor !== 0) {
+                    const notaEscala17 = Math.min(Math.max((valor * 1.5) + 1, 1), 7);
+                    if (notaEscala17 < 4.0) {
+                        reprobado = true;
+                    }
+                }
+            });
+
+            if (reprobado) {
+                alert('El estudiante ha reprobado la Práctica debido a que tiene al menos un ítem con nota inferior a 4.0');
+            }
+        }
+
+        notas.forEach(nota => {
+            nota.addEventListener('input', actualizarPuntajes);
+        });
+
+        // Llamar a la función una vez al inicio para mostrar los valores iniciales
+        actualizarPuntajes();
+    </script>
+</body>
+</html>
