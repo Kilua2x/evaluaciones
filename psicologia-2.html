@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan de Práctica Profesional Escuela de Psicología</title>
+    <title>Sistema Integrado de Evaluación - Práctica Profesional Psicología</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 20px;
-        }
-        h1, h2 {
             color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
         }
         table {
             width: 100%;
@@ -27,16 +30,104 @@
         th {
             background-color: #f2f2f2;
         }
-        input[type="text"], input[type="number"], input[type="date"], select, textarea {
+        input[type="text"], 
+        input[type="number"], 
+        input[type="date"], 
+        select, 
+        textarea {
             width: 100%;
             padding: 5px;
             margin: 5px 0;
+            box-sizing: border-box;
         }
         textarea {
             height: 100px;
+            resize: vertical;
         }
         .section {
             margin-bottom: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .correlation-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        .competencia-card {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #f0f0f0;
+            margin: 5px 0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 20px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            transition: width 0.5s ease-in-out;
+        }
+        .firma {
+            border-top: 1px solid #000;
+            margin-top: 50px;
+            padding-top: 10px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .evaluation-guide {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .evaluacion-tabla {
+            margin: 10px 0;
+        }
+        .error {
+            border-color: #dc3545;
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                padding: 0;
+            }
+            .section {
+                box-shadow: none;
+            }
         }
     </style>
 </head>
@@ -126,140 +217,491 @@
                 <td><input type="number" id="horas_semanales"></td>
             </tr>
         </table>
-    </div>
+        <div class="section">
+        <h2>X. EVALUACIÓN DE COMPETENCIAS DEL PERFIL DE EGRESO</h2>
+        
+        <div class="evaluation-guide">
+            <h3>Escala de Evaluación</h3>
+            <table>
+                <tr>
+                    <th>Nivel</th>
+                    <th>Puntaje</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>No Logrado</td>
+                    <td>0</td>
+                    <td>No muestra evidencia de la competencia</td>
+                </tr>
+                <tr>
+                    <td>En Desarrollo</td>
+                    <td>1-2</td>
+                    <td>Muestra un desarrollo inicial de la competencia</td>
+                </tr>
+                <tr>
+                    <td>Logrado</td>
+                    <td>3</td>
+                    <td>Cumple con el nivel esperado de la competencia</td>
+                </tr>
+                <tr>
+                    <td>Destacado</td>
+                    <td>4</td>
+                    <td>Supera las expectativas de la competencia</td>
+                </tr>
+            </table>
+        </div>
 
-    <div class="section">
-        <h2>IV. SUPERVISIÓN EN TERRENO</h2>
-        <table>
-            <tr>
-                <td>PSICÓLOGO(A) SUPERVISOR</td>
-                <td><input type="text" id="supervisor_terreno"></td>
-            </tr>
-            <tr>
-                <td>ÁREA SUPERVISIÓN</td>
-                <td><input type="text" id="area_supervision"></td>
-            </tr>
-            <tr>
-                <td>TELÉFONO</td>
-                <td><input type="text" id="telefono_supervisor"></td>
-            </tr>
-            <tr>
-                <td>CORREO ELECTRÓNICO</td>
-                <td><input type="text" id="correo_supervisor"></td>
-            </tr>
-        </table>
-    </div>
+        <div class="competencias-evaluacion">
+            <!-- Evaluación Competencia 1 -->
+            <div class="competencia-grupo">
+                <h4>1. Fundamentos Epistemológicos y Metodológicos (35%)</h4>
+                <table class="evaluacion-tabla">
+                    <tr>
+                        <td>Análisis de fundamentos epistemológicos del comportamiento humano</td>
+                        <td><input type="number" min="0" max="4" class="puntaje" data-competencia="1"></td>
+                    </tr>
+                    <tr>
+                        <td>Comprensión de procesos anatomofisiológicos</td>
+                        <td><input type="number" min="0" max="4" class="puntaje" data-competencia="1"></td>
+                    </tr>
+                    <tr>
+                        <td>Integración de procesos psicosociales</td>
+                        <td><input type="number" min="0" max="4" class="puntaje" data-competencia="1"></td>
+                    </tr>
+                </table>
+            </div>
 
-    <div class="section">
-        <h2>V. INFORMACIÓN DESGLOSADA SOBRE ÁREAS Y CONTENIDOS DE LA PRÁCTICA</h2>
-        <table>
-            <tr>
-                <td>ÁREA PRINCIPAL</td>
-                <td><input type="text" id="area_principal"></td>
-            </tr>
-            <tr>
-                <td>ÁREAS SECUNDARIAS</td>
-                <td><input type="text" id="areas_secundarias"></td>
-            </tr>
-            <tr>
-                <td>TIPO DE ACTIVIDAD PREFERENTE</td>
-                <td>
-                    <input type="checkbox" id="intervencion"> INTERVENCIÓN<br>
-                    <input type="checkbox" id="investigacion"> INVESTIGACIÓN<br>
-                    <input type="checkbox" id="docencia"> DOCENCIA<br>
-                    <input type="checkbox" id="otra"> OTRA
-                </td>
-            </tr>
-        </table>
-        <h3>CARACTERIZACIÓN DE SUJETOS</h3>
-        <textarea id="caracterizacion_sujetos"></textarea>
-    </div>
+            <!-- Evaluación Competencia 2 -->
+            <div class="competencia-grupo">
+                <h4>2. Estrategias Preventivas e Interventivas (35%)</h4>
+                <table class="evaluacion-tabla">
+                    <tr>
+                        <td>Diseño de estrategias preventivas</td>
+                        <td><input type="number" min="0" max="4" class="puntaje" data-competencia="2"></td>
+                    </tr>
+                    <tr>
+                        <td>Ejecución de intervenciones profesionales</td>
+                        <td><input type="number" min="0" max="4" class="puntaje" data-competencia="2"></td>
+                    </tr>
+                    <tr>
+                        <td>Evaluación de resultados de intervenciones</td>
+                        <td><input type="number" min="0" max="4" class="puntaje" data-competencia="2"></td>
+                    </tr>
+                </table>
+            </div>
 
-    <div class="section">
-        <h2>VI. OBJETIVOS PARA LOGRAR EN LA PRÁCTICA PROFESIONAL</h2>
-        <h3>a) Para la Institución</h3>
-        <textarea id="objetivos_institucion"></textarea>
-        <h3>b) Para los sujetos (clientes, pacientes, usuarios, etc)</h3>
-        <textarea id="objetivos_sujetos"></textarea>
-        <h3>c) Para el/la Estudiante</h3>
-        <textarea id="objetivos_estudiante"></textarea>
-    </div>
+            <!-- Evaluación Competencia 3 -->
+            <div class="competencia-grupo">
+                <h4>3. Evaluación e Instrumentos Psicológicos (30%)</h4>
+                <table class="evaluacion-tabla">
+                    <tr>
+                        <td>Elaboración de estrategias de evaluación</td>
+                        <td><input type="number" min="0" max="4" class="puntaje" data-competencia="3"></td>
+                    </tr>
+                    <tr>
+                        <td>Aplicación de instrumentos psicológicos</td>
+                        <td><input type="number" min="0" max="4" class="puntaje" data-competencia="3"></td>
+                    </tr>
+                    <tr>
+                        <td>Interpretación de resultados según estándares</td>
+                        <td><input type="number" min="0" max="4" class="puntaje" data-competencia="3"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
-    <div class="section">
-        <h2>VII. ACTIVIDADES PRINCIPALES</h2>
-        <table id="actividades">
-            <tr>
-                <th>ACTIVIDADES</th>
-                <th>METODOLOGÍA</th>
-                <th>INDICADORES</th>
-            </tr>
-            <tr>
-                <td><input type="text" class="actividad"></td>
-                <td><input type="text" class="metodologia"></td>
-                <td><input type="text" class="indicador"></td>
-            </tr>
-        </table>
-        <button onclick="agregarFila()">Agregar Actividad</button>
-    </div>
+        <!-- Tabla de Resumen de Evaluación -->
+        <div class="evaluation-summary">
+            <h3>Resumen de Evaluación</h3>
+            <table>
+                <tr>
+                    <th>Competencia</th>
+                    <th>Ponderación</th>
+                    <th>Promedio (1-4)</th>
+                    <th>Nota (1-7)</th>
+                </tr>
+                <tr>
+                    <td>1. Fundamentos Epistemológicos</td>
+                    <td>35%</td>
+                    <td id="promedio-comp1">0.00</td>
+                    <td id="nota-comp1">1.0</td>
+                </tr>
+                <tr>
+                    <td>2. Estrategias Preventivas</td>
+                    <td>35%</td>
+                    <td id="promedio-comp2">0.00</td>
+                    <td id="nota-comp2">1.0</td>
+                </tr>
+                <tr>
+                    <td>3. Evaluación Psicológica</td>
+                    <td>30%</td>
+                    <td id="promedio-comp3">0.00</td>
+                    <td id="nota-comp3">1.0</td>
+                </tr>
+                <tr>
+                    <td colspan="3"><strong>Nota Final</strong></td>
+                    <td id="nota-final">1.0</td>
+                </tr>
+            </table>
+        </div>
 
-    <div class="section">
-        <h2>VIII. OBSERVACIONES</h2>
-        <textarea id="observaciones"></textarea>
-    </div>
+        <div class="correlation-section">
+            <h2>Correlación con el Perfil de Egreso</h2>
+            <div class="competencias-container">
+                <!-- Competencia 1 -->
+                <div class="competencia-card">
+                    <h4>1. Fundamentos Epistemológicos</h4>
+                    <p>Analizar los fundamentos epistemológicos, teóricos y metodológicos del estudio científico del comportamiento humano</p>
+                    <div class="progress-bar">
+                        <div class="progress" id="comp1-progress" style="width: 0%">0%</div>
+                    </div>
+                </div>
 
-    <div class="section">
-        <h2>IX. CARTA GANTT</h2>
-        <table id="carta_gantt">
-            <tr>
-                <th>Actividades</th>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-                <th>4</th>
-                <th>5</th>
-                <th>6</th>
-                <th>7</th>
-                <th>8</th>
-                <th>9</th>
-            </tr>
-        </table>
-        <button onclick="agregarFilaGantt()">Agregar Actividad</button>
-    </div>
+                <!-- Competencia 2 -->
+                <div class="competencia-card">
+                    <h4>2. Estrategias Preventivas</h4>
+                    <p>Diseñar, ejecutar y evaluar estrategias preventivas e interventivas propias de la disciplina</p>
+                    <div class="progress-bar">
+                        <div class="progress" id="comp2-progress" style="width: 0%">0%</div>
+                    </div>
+                </div>
 
-    <p>NOTA: Toda modificación a este plan debe ser propuesta de común acuerdo entre Supervisor en terreno y Estudiante en Práctica y comunicada de inmediato al Supervisor Docente de Prácticas Profesionales de la Universidad de Aconcagua</p>
-
-    <div>
-        <p>Ps. Supervisor Docente: _________________________</p>
-        <p>Supervisor en Terreno: _________________________</p>
+                <!-- Competencia 3 -->
+                <div class="competencia-card">
+                    <h4>3. Evaluación Psicológica</h4>
+                    <p>Elaborar, aplicar e interpretar estrategias y/o instrumentos de evaluación</p>
+                    <div class="progress-bar">
+                        <div class="progress" id="comp3-progress" style="width: 0%">0%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
-        function agregarFila() {
-            const tabla = document.getElementById('actividades');
-            const newRow = tabla.insertRow(-1);
-            newRow.innerHTML = `
-                <td><input type="text" class="actividad"></td>
-                <td><input type="text" class="metodologia"></td>
-                <td><input type="text" class="indicador"></td>
-            `;
+        function calcularNota(promedio) {
+            // Convertir promedio de escala 1-4 a escala 1-7
+            return promedio === 0 ? 1.0 : ((promedio / 4) * 6) + 1;
         }
 
-        function agregarFilaGantt() {
-            const tabla = document.getElementById('carta_gantt');
-            const newRow = tabla.insertRow(-1);
-            newRow.innerHTML = `
-                <td><input type="text" class="actividad_gantt"></td>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-            `;
+        function updateCompetencias() {
+            const competencias = {
+                1: { sum: 0, count: 0, weight: 0.35 },
+                2: { sum: 0, count: 0, weight: 0.35 },
+                3: { sum: 0, count: 0, weight: 0.30 }
+            };
+
+            // Recolectar datos
+            document.querySelectorAll('.puntaje').forEach(input => {
+                if (input.value !== '') {
+                    const value = parseFloat(input.value);
+                    if (!isNaN(value) && value >= 0 && value <= 4) {
+                        const comp = input.dataset.competencia;
+                        competencias[comp].sum += value;
+                        competencias[comp].count++;
+                    }
+                }
+            });
+
+            let notaFinal = 0;
+
+            // Calcular promedios y notas por competencia
+            for (let comp in competencias) {
+                const promedio = competencias[comp].count > 0 ? 
+                    competencias[comp].sum / competencias[comp].count : 0;
+                const nota = calcularNota(promedio);
+                
+                // Actualizar promedios y notas en la tabla
+                document.getElementById(`promedio-comp${comp}`).textContent = 
+                    promedio.toFixed(2);
+                document.getElementById(`nota-comp${comp}`).textContent = 
+                    nota.toFixed(1);
+                
+                // Actualizar barra de progreso
+                const porcentaje = (promedio / 4) * 100;
+                const progressBar = document.getElementById(`comp${comp}-progress`);
+                progressBar.style.width = `${porcentaje}%`;
+                progressBar.textContent = `${Math.round(porcentaje)}%`;
+
+                // Cambiar color según el porcentaje
+                if (porcentaje < 60) {
+                    progressBar.style.backgroundColor = '#dc3545';
+                } else if (porcentaje < 75) {
+                    progressBar.style.backgroundColor = '#ffc107';
+                } else {
+                    progressBar.style.backgroundColor = '#28a745';
+                }
+
+                // Acumular nota final ponderada
+                notaFinal += nota * competencias[comp].weight;
+            }
+
+            // Actualizar nota final
+            document.getElementById('nota-final').textContent = 
+                notaFinal.toFixed(1);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.puntaje').forEach(input => {
+                input.addEventListener('input', function() {
+                    validateInput(this);
+                    updateCompetencias();
+                });
+            });
+        });
+
+        function validateInput(input) {
+            const value = parseFloat(input.value);
+            if (isNaN(value) || value < 0 || value > 4) {
+                input.classList.add('error');
+                return false;
+            }
+            input.classList.remove('error');
+            return true;
         }
     </script>
+    </div>
+    <div class="firma">
+        <table class="tabla-firmas">
+            <tr>
+                <td>
+                    <p>Firma del Estudiante:</p>
+                    <div class="linea-firma">_________________________</div>
+                    <p>Nombre: <span class="nombre-estudiante"></span></p>
+                    <p>Fecha: <span class="fecha-firma"></span></p>
+                </td>
+                <td>
+                    <p>Supervisor en Terreno:</p>
+                    <div class="linea-firma">_________________________</div>
+                    <p>Nombre: <span class="nombre-supervisor"></span></p>
+                    <p>Fecha: <span class="fecha-firma"></span></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p>Supervisor Docente:</p>
+                    <div class="linea-firma">_________________________</div>
+                    <p>Nombre: <span class="nombre-docente"></span></p>
+                    <p>Fecha: <span class="fecha-firma"></span></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section no-print">
+        <h2>ACCIONES</h2>
+        <div class="botones-accion">
+            <button onclick="guardarFormulario()" class="btn-guardar">Guardar Formulario</button>
+            <button onclick="window.print()" class="btn-imprimir">Imprimir / Guardar PDF</button>
+            <button onclick="limpiarFormulario()" class="btn-limpiar">Limpiar Formulario</button>
+        </div>
+    </div>
+
+    <script>
+        // Función para guardar el formulario
+        function guardarFormulario() {
+            // Recopilar todos los datos del formulario
+            const datosFormulario = {
+                estudiante: {
+                    nombre: document.getElementById('nombre_estudiante').value,
+                    rut: document.getElementById('rut_estudiante').value,
+                    telefono: document.getElementById('telefono_estudiante').value,
+                    correo: document.getElementById('correo_estudiante').value
+                },
+                institucion: {
+                    nombre: document.getElementById('nombre_institucion').value,
+                    director: document.getElementById('director_institucion').value,
+                    telefonos: document.getElementById('telefonos_institucion').value,
+                    direccion: document.getElementById('direccion_institucion').value,
+                    correo: document.getElementById('correo_institucion').value,
+                    comuna: document.getElementById('comuna_institucion').value,
+                    region: document.getElementById('region_institucion').value
+                },
+                practica: {
+                    fechaInicio: document.getElementById('fecha_inicio').value,
+                    fechaTermino: document.getElementById('fecha_termino').value,
+                    regimen: document.getElementById('regimen').value,
+                    horasSemanales: document.getElementById('horas_semanales').value
+                },
+                evaluaciones: recopilarEvaluaciones(),
+                notaFinal: document.getElementById('nota-final').textContent
+            };
+
+            // Guardar en localStorage
+            localStorage.setItem('formularioPractica', JSON.stringify(datosFormulario));
+            alert('Formulario guardado exitosamente');
+        }
+
+        // Función para recopilar evaluaciones
+        function recopilarEvaluaciones() {
+            const evaluaciones = {};
+            document.querySelectorAll('.puntaje').forEach(input => {
+                if (input.value !== '') {
+                    const competencia = input.dataset.competencia;
+                    if (!evaluaciones[competencia]) {
+                        evaluaciones[competencia] = [];
+                    }
+                    evaluaciones[competencia].push(parseFloat(input.value));
+                }
+            });
+            return evaluaciones;
+        }
+
+        // Función para limpiar el formulario
+        function limpiarFormulario() {
+            if (confirm('¿Está seguro de que desea limpiar todo el formulario?')) {
+                // Limpiar inputs de texto
+                document.querySelectorAll('input[type="text"], input[type="number"], input[type="date"], textarea').forEach(input => {
+                    input.value = '';
+                });
+
+                // Limpiar checkboxes
+                document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+
+                // Limpiar selects
+                document.querySelectorAll('select').forEach(select => {
+                    select.selectedIndex = 0;
+                });
+
+                // Reiniciar evaluaciones
+                document.querySelectorAll('.puntaje').forEach(input => {
+                    input.value = '';
+                });
+
+                // Actualizar progreso y notas
+                updateCompetencias();
+            }
+        }
+
+        // Función para cargar datos guardados
+        function cargarDatosGuardados() {
+            const datosGuardados = localStorage.getItem('formularioPractica');
+            if (datosGuardados) {
+                const datos = JSON.parse(datosGuardados);
+                // Cargar datos del estudiante
+                document.getElementById('nombre_estudiante').value = datos.estudiante.nombre;
+                document.getElementById('rut_estudiante').value = datos.estudiante.rut;
+                document.getElementById('telefono_estudiante').value = datos.estudiante.telefono;
+                document.getElementById('correo_estudiante').value = datos.estudiante.correo;
+                
+                // Cargar datos de la institución
+                document.getElementById('nombre_institucion').value = datos.institucion.nombre;
+                // ... cargar resto de datos ...
+
+                // Cargar evaluaciones si existen
+                if (datos.evaluaciones) {
+                    for (let comp in datos.evaluaciones) {
+                        const inputs = document.querySelectorAll(`.puntaje[data-competencia="${comp}"]`);
+                        datos.evaluaciones[comp].forEach((valor, index) => {
+                            if (inputs[index]) inputs[index].value = valor;
+                        });
+                    }
+                    updateCompetencias();
+                }
+            }
+        }
+
+        // Cargar datos al iniciar
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarDatosGuardados();
+            
+            // Configurar la fecha actual en los campos de firma
+            const fechaActual = new Date().toLocaleDateString();
+            document.querySelectorAll('.fecha-firma').forEach(elem => {
+                elem.textContent = fechaActual;
+            });
+
+            // Actualizar nombre del estudiante en la firma cuando se ingrese
+            document.getElementById('nombre_estudiante').addEventListener('input', function() {
+                document.querySelector('.nombre-estudiante').textContent = this.value;
+            });
+        });
+
+        // Funciones auxiliares para validación de datos
+        function validarRUT(rut) {
+            // Implementar validación de RUT chileno
+            return true; // Implementar lógica real de validación
+        }
+
+        function validarEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // Evento para validar campos obligatorios antes de guardar
+        document.querySelector('.btn-guardar').addEventListener('click', function(e) {
+            const camposObligatorios = document.querySelectorAll('[required]');
+            let formValido = true;
+
+            camposObligatorios.forEach(campo => {
+                if (!campo.value) {
+                    formValido = false;
+                    campo.classList.add('error');
+                } else {
+                    campo.classList.remove('error');
+                }
+            });
+
+            if (!formValido) {
+                alert('Por favor complete todos los campos obligatorios');
+                e.preventDefault();
+            }
+        });
+    </script>
+
+    <style>
+        .botones-accion {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-guardar, .btn-imprimir, .btn-limpiar {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-guardar {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-imprimir {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        .btn-limpiar {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .tabla-firmas {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .linea-firma {
+            border-top: 1px solid black;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        .error {
+            border: 2px solid #f44336;
+        }
+
+        @media print {
+            .botones-accion {
+                display: none;
+            }
+        }
+    </style>
 </body>
 </html>
