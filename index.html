@@ -5,6 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INSTRUMENTOS EVALUATIVOS PARA PROCESOS DE PRÁCTICAS</title>
     <style>
+        /* Estilos originales */
+        :root {
+            --primary-color: #000080;
+            --secondary-color: #004080;
+            --accent-color: #ffffff;
+            --text-color: #ffffff;
+            --hover-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Estilos para el formulario de login */
+        .login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .login-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .login-form h2 {
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--secondary-color);
+            color: var(--accent-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .error-message {
+            color: #ff4444;
+            text-align: center;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        /* Botón de cerrar sesión */
+        .logout-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 100;
+            display: none;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255, 0, 0, 0.9);
+        }
+
+        /* Mantener todos los estilos originales aquí */
+        [Los estilos originales del código...]
+
+    </style>
+</head>
+<body>
+    <!-- Formulario de Login -->
+    <div class="login-overlay" id="loginOverlay">
+        <form class="login-form" onsubmit="return false;">
+            <h2>Acceso al Sistema</h2>
+            <div class="form-group">
+                <label for="username">Usuario</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" required>
+            </div>
+            <button class="login-btn" onclick="login()">Ingresar</button>
+            <p id="errorMsg" class="error-message">Usuario o contraseña incorrectos</p>
+        </form>
+    </div>
+
+    <!-- Botón de Cerrar Sesión -->
+    <button class="logout-btn" id="logoutBtn" onclick="logout()">Cerrar Sesión</button>
+
+    <!-- Contenido Original -->
+    [<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSTRUMENTOS EVALUATIVOS PARA PROCESOS DE PRÁCTICAS</title>
+    <style>
         :root {
             --primary-color: #000080;
             --secondary-color: #004080;
@@ -341,5 +475,62 @@
             </li>
         </ul>
     </div>
+</body>
+</html>]
+
+    <script>
+        // Credenciales de demostración
+        const DEMO_USER = "admin";
+        const DEMO_PASS = "123456";
+
+        // Elementos del DOM
+        const loginOverlay = document.getElementById('loginOverlay');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const errorMsg = document.getElementById('errorMsg');
+
+        // Función de login
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === DEMO_USER && password === DEMO_PASS) {
+                loginOverlay.style.display = 'none';
+                logoutBtn.style.display = 'block';
+                errorMsg.style.display = 'none';
+                // Guardar el estado de la sesión
+                sessionStorage.setItem('isLoggedIn', 'true');
+            } else {
+                errorMsg.style.display = 'block';
+                // Limpiar campos
+                document.getElementById('password').value = '';
+            }
+        }
+
+        // Función de logout
+        function logout() {
+            loginOverlay.style.display = 'flex';
+            logoutBtn.style.display = 'none';
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            errorMsg.style.display = 'none';
+            // Limpiar el estado de la sesión
+            sessionStorage.removeItem('isLoggedIn');
+        }
+
+        // Verificar estado de la sesión al cargar la página
+        window.onload = function() {
+            if (sessionStorage.getItem('isLoggedIn') === 'true') {
+                loginOverlay.style.display = 'none';
+                logoutBtn.style.display = 'block';
+            }
+        }
+
+        // Permitir login con Enter
+        document.getElementById('password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                login();
+            }
+        });
+    </script>
 </body>
 </html>
