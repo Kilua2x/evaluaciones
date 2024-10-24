@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pauta de Evaluación Práctica Clínica II</title>
+    <title>Sistema Integrado de Evaluación y Correlación con Perfil de Egreso</title>
     <style>
+        /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -16,6 +17,7 @@
         h1, h2, h3 {
             color: #2c3e50;
         }
+        /* Estilos para tablas */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -29,15 +31,49 @@
         th {
             background-color: #f2f2f2;
         }
-        input[type="text"], input[type="number"], input[type="date"], select, textarea {
+        /* Estilos para inputs y áreas de texto */
+        input[type="text"], 
+        input[type="number"], 
+        input[type="date"], 
+        select, 
+        textarea {
             width: 100%;
             padding: 5px;
             margin: 5px 0;
+        }
+        /* Estilos para el sistema de correlación */
+        .correlation-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #f0f0f0;
+            margin: 5px 0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 20px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            transition: width 0.5s ease-in-out;
         }
         .firma {
             border-top: 1px solid #000;
             margin-top: 50px;
             padding-top: 10px;
+        }
+        .competencia-card {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         @media print {
             .no-print {
@@ -47,6 +83,7 @@
     </style>
 </head>
 <body>
+    <!-- Sección 1: Pauta de Evaluación Original -->
     <h1>Práctica clínica II</h1>
     <h2>Practica de Enfermería Atención Primaria de Salud</h2>
     <h3>Pauta de evaluación</h3>
@@ -129,199 +166,195 @@
         <tr>
             <td rowspan="6">Conductual y personal - Ámbito actitudinal</td>
             <td>Demuestra interés en la búsqueda de oportunidades de aprendizaje.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="1,2,4"></td>
         </tr>
         <tr>
             <td>Demuestra autocrítica en el desarrollo de sus actividades.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="1,5"></td>
         </tr>
         <tr>
             <td>Aplica principios éticos en su quehacer como enfermero/a.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="1,6"></td>
         </tr>
         <tr>
             <td>Reconoce opiniones constructivas de parte de la supervisión del/la docente.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="5"></td>
         </tr>
         <tr>
             <td>Práctica las observaciones y/o sugerencias proporcionadas por el/la docente.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="1,5"></td>
         </tr>
         <tr>
             <td>Demuestra proactividad por trabajar en equipo, desarrollando habilidades como la comunicación asertiva y resolución de problemáticas.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="3,5,6"></td>
         </tr>
         <!-- Conductual y personal - Formalidad profesional -->
         <tr>
             <td rowspan="4">Conductual y personal - Formalidad profesional</td>
             <td>Mantiene una relación cordial y formal entre docentes, pares y equipo de salud del Campo Clínico.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="5,6"></td>
         </tr>
         <tr>
             <td>Cumple puntualmente con su horario acordado. En caso de inasistencia y/o atrasos, da cuenta de ello justificándolos cuando corresponda a sus autoridades respectivas.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="3,6"></td>
         </tr>
         <tr>
             <td>Utiliza el uniforme según normativa establecidas, respetando la reglamentación del servicio clínico.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="3,6"></td>
         </tr>
         <tr>
             <td>Utiliza un adecuado lenguaje formal y escrito, considerando el nivel formativo en el que se encuentra.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="5"></td>
         </tr>
         <!-- Conductual y personal - Atención al paciente -->
         <tr>
             <td rowspan="7">Conductual y personal - Atención al paciente</td>
             <td>Mantiene la privacidad del usuario durante la atención de enfermería.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="1,6"></td>
         </tr>
         <tr>
             <td>Informa al usuario cada una de las atenciones propias relacionadas a la atención de enfermería.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="1,2,5"></td>
         </tr>
         <tr>
             <td>Informa oportunamente al supervisor directo en caso cometer algún error u omisión en su quehacer como enfermero en formación.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="3,5,6"></td>
         </tr>
         <tr>
             <td>Respeta la autonomía del/la usuaria, si esta es solicitada.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="1,6"></td>
         </tr>
         <tr>
             <td>Demuestra empatía por el/la usuaria, expresando preocupación por las necesidades del/la mismo/a.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="1,5,6"></td>
         </tr>
         <tr>
             <td>Educa al paciente y su familia en actividades propias relacionadas con su quehacer de enfermería.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="1,2,5"></td>
         </tr>
         <tr>
             <td>Mantiene una relación cordial y formal con el/la usuaria y su familia.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="conductual" data-competencia="1,5,6"></td>
         </tr>
         <!-- Rol asistencial - Indicadores Generales -->
         <tr>
             <td rowspan="6">Rol asistencial - Indicadores Generales</td>
             <td>Aplica normas de asepsia, antisepsia y precauciones universales.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,3"></td>
         </tr>
         <tr>
             <td>Realiza control e interpretación de los signos vitales.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,4"></td>
         </tr>
         <tr>
             <td>Registra actividades administrativas: Ingreso, egreso, derivaciones, educación, sugerencias y gestión de horas.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="3,5"></td>
         </tr>
         <tr>
             <td>Realiza curaciones con técnica correcta e identifica tipo de herida o lesión.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,4"></td>
         </tr>
         <tr>
             <td>Toma de muestra de exámenes: sangre, orina, deposiciones y otros, considerando el correcto procedimiento en cada una de estas.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,4"></td>
         </tr>
         <tr>
             <td>Realiza procedimientos inyectables según el Protocolo del Centro Asistencial.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,3"></td>
         </tr>
         <!-- Rol asistencial - Indicadores control niño sano -->
         <tr>
             <td rowspan="7">Rol asistencial - Indicadores control niño sano</td>
             <td>Realiza examen físico del niño en forma correcta respetando su privacidad y autonomía.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,6"></td>
         </tr>
         <tr>
             <td>Enfatiza en el examen físico de acuerdo al grupo etario, necesidades alteradas y patología.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,4"></td>
         </tr>
         <tr>
             <td>Explica de forma clara y correcta al usuario y cuidador el procedimiento desarrollado, de acuerdo con la edad del niño y lo pesquisado.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,2,5"></td>
         </tr>
         <tr>
             <td>Realiza procedimientos en forma correcta, de acuerdo con la edad y explica clara y técnicamente los hallazgos encontrados.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,4,5"></td>
         </tr>
         <tr>
             <td>Identifica, según los hallazgos mencionados, las áreas de derivación (Asistencia social, asistencia dental, salas IRA-ERA, etc.) en las que se debe dirigir la familia en conjunto al paciente.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,3,5"></td>
         </tr>
         <tr>
             <td>Realiza visita domiciliaria integral (biopsicosocial), demuestra evidencia (genograma, ecomapa, Apgar familiar, circulo familiar, etc.) de la realización de esta.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,2,4"></td>
         </tr>
         <tr>
             <td>Indica tipo de alimentación del usuario realizando educación y dando tips de acuerdo a cada usuario.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,2"></td>
         </tr>
         <!-- Rol asistencial - Indicadores PAI -->
         <tr>
             <td rowspan="5">Rol asistencial - Indicadores PAI</td>
             <td>Utiliza una correcta técnica de vacunación.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,3"></td>
         </tr>
         <tr>
             <td>Conoce un calendario actualizado de vacunación.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,4"></td>
         </tr>
         <tr>
             <td>Conoce contraindicaciones en la administración de inmunizaciones.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,4"></td>
         </tr>
         <tr>
             <td>Explica de forma clara y correcta al familiar el procedimiento sobre los cuidados posterior a la vacunación.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,2,5"></td>
         </tr>
         <tr>
             <td>Conoce las normas y procedimientos de la cadena de frio, el proceso de conservación, manejo y distribución de vacunas.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="asistencial" data-competencia="1,3,4"></td>
         </tr>
         <!-- Manejo administrativo -->
         <tr>
             <td rowspan="11">Manejo administrativo</td>
             <td>Conoce pautas y documentación de los diferentes programas de Atención Primaria, (del adulto y adulto mayor, niño y adolescente, etc.).</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo" data-competencia="1,3,4"></td>
         </tr>
         <tr>
             <td>Orienta a paciente y familia sobre pasos a seguir para su atención.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo" data-competencia="2,5"></td>
         </tr>
         <tr>
             <td>Participa íntegramente con el equipo multidisciplinario de salud, de acuerdo con su rol.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo" data-competencia="3,5,6"></td>
         </tr>
         <tr>
             <td>Coordina solicitudes de exámenes considerando: profesional, flujograma y tiempos según GES.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo" data-competencia="1,3"></td>
         </tr>
         <tr>
             <td>Realiza registro correcto de enfermería en plataformas y/o documentación correspondiente.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo" data-competencia="3,5"></td>
         </tr>
         <tr>
             <td>Detecta problemas según las necesidades alteradas en base a la teoría de Virginia Henderson.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo" data-competencia="1,4"></td>
         </tr>
         <tr>
             <td>Formula diagnósticos de enfermería según NANDA o formato PES.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo" data-competencia="1,4"></td>
         </tr>
         <tr>
             <td>Plantea objetivos (NOC) para diagnóstico enunciado.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo" data-competencia="1,3,4"></td>
         </tr>
         <tr>
             <td>Plantea intervenciones (NIC) de forma priorizada.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo" data-competencia="1,3,4"></td>
         </tr>
         <tr>
             <td>Plantea evaluación del proceso de enfermería.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo"></td>
-        </tr>
-        <tr>
-            <td>Prepara material educativo y realiza educación a paciente y familia.</td>
-            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo"></td>
+            <td><input type="number" min="0" max="4" class="puntaje" data-dimension="administrativo" data-competencia="1,4"></td>
         </tr>
     </table>
 
@@ -334,32 +367,87 @@
             <th>Dimensión</th>
             <th>Ponderación</th>
             <th>Puntaje obtenido</th>
+            <th>Nota (1-7)</th>
         </tr>
         <tr>
             <td>1. Conductual y personal</td>
             <td>15%</td>
             <td id="puntaje_conductual">0</td>
+            <td id="nota_conductual">1.0</td>
         </tr>
         <tr>
             <td>2. Rol asistencial</td>
             <td>65%</td>
             <td id="puntaje_asistencial">0</td>
+            <td id="nota_asistencial">1.0</td>
         </tr>
         <tr>
             <td>3. Manejo administrativo</td>
             <td>20%</td>
             <td id="puntaje_administrativo">0</td>
+            <td id="nota_administrativo">1.0</td>
         </tr>
         <tr>
-            <td>4. Evaluación de suficiencia</td>
-            <td>0%</td>
-            <td id="puntaje_suficiencia">0</td>
-        </tr>
-        <tr>
-            <td colspan="2"><strong>Nota obtenida (1-7)</strong></td>
-            <td id="nota_final">0</td>
+            <td colspan="3"><strong>Nota Final</strong></td>
+            <td id="nota_final">1.0</td>
         </tr>
     </table>
+
+    <!-- Sistema de Correlación con el Perfil de Egreso -->
+    <div class="correlation-section">
+        <h2>Correlación con Competencias del Perfil de Egreso</h2>
+        <p>Este análisis muestra cómo el desempeño del estudiante se relaciona con las competencias del perfil de egreso:</p>
+
+        <div class="competencias-container">
+            <div class="competencia-card">
+                <h4>Competencia 1: Cuidados</h4>
+                <p>Gestionar el cuidado de enfermería de personas, familias y comunidades.</p>
+                <div class="progress-bar">
+                    <div class="progress" id="comp1-progress" style="width: 0%">0%</div>
+                </div>
+            </div>
+            
+            <div class="competencia-card">
+                <h4>Competencia 2: Educación</h4>
+                <p>Educar en salud a personas, familias y comunidades.</p>
+                <div class="progress-bar">
+                    <div class="progress" id="comp2-progress" style="width: 0%">0%</div>
+                </div>
+            </div>
+
+            <div class="competencia-card">
+                <h4>Competencia 3: Gestión</h4>
+                <p>Gestionar servicios y programas de salud.</p>
+                <div class="progress-bar">
+                    <div class="progress" id="comp3-progress" style="width: 0%">0%</div>
+                </div>
+            </div>
+
+            <div class="competencia-card">
+                <h4>Competencia 4: Investigación</h4>
+                <p>Desarrollar investigación en el ámbito de la enfermería y salud.</p>
+                <div class="progress-bar">
+                    <div class="progress" id="comp4-progress" style="width: 0%">0%</div>
+                </div>
+            </div>
+
+            <div class="competencia-card">
+                <h4>Competencia 5: Comunicación</h4>
+                <p>Comunicar efectivamente en el ámbito de la salud.</p>
+                <div class="progress-bar">
+                    <div class="progress" id="comp5-progress" style="width: 0%">0%</div>
+                </div>
+            </div>
+
+            <div class="competencia-card">
+                <h4>Competencia 6: Ciudadanía</h4>
+                <p>Demostrar comportamiento y compromiso ciudadano.</p>
+                <div class="progress-bar">
+                    <div class="progress" id="comp6-progress" style="width: 0%">0%</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="firma">
         <p>Firma estudiante: ____________________</p>
@@ -368,55 +456,107 @@
         <p>Firma docente supervisor: ____________________</p>
     </div>
 
-    <p><strong>Nota:</strong> Si el estudiante presenta uno de los ítems con nota inferior a 4,0 se considera reprobación inmediata de la Práctica.</p>
-
     <button class="no-print" onclick="window.print()">Imprimir / Guardar como PDF</button>
 
     <script>
-        document.addEventListener('input', function(e) {
-            if (e.target.classList.contains('puntaje')) {
-                calcularPuntajes();
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Agregar eventos a todas las entradas de calificación
+            document.querySelectorAll('.puntaje').forEach(input => {
+                input.addEventListener('input', function() {
+                    validateInput(this);
+                    updateEvaluacion();
+                    updateCompetencias();
+                });
+            });
         });
 
-        function calcularPuntajes() {
-            let dimensiones = {
-                'conductual': { sum: 0, count: 0, weight: 0.15 },
-                'asistencial': { sum: 0, count: 0, weight: 0.65 },
-                'administrativo': { sum: 0, count: 0, weight: 0.20 }
+        function validateInput(input) {
+            const value = parseFloat(input.value);
+            if (isNaN(value) || value < 0 || value > 4) {
+                input.classList.add('error');
+                return false;
+            }
+            input.classList.remove('error');
+            return true;
+        }
+
+function updateEvaluacion() {
+    const dimensiones = {
+        conductual: { sum: 0, count: 0, weight: 0.15 },
+        asistencial: { sum: 0, count: 0, weight: 0.65 },
+        administrativo: { sum: 0, count: 0, weight: 0.20 }
+    };
+
+    document.querySelectorAll('.puntaje').forEach(input => {
+        if (input.value !== '') {
+            const dimension = input.dataset.dimension;
+            const value = parseFloat(input.value);
+            if (!isNaN(value) && value >= 0 && value <= 4) {
+                dimensiones[dimension].sum += value;
+                dimensiones[dimension].count++;
+            }
+        }
+    });
+
+    let notaFinal = 0;
+    for (let dim in dimensiones) {
+        const promedio = dimensiones[dim].count > 0 ? 
+            dimensiones[dim].sum / dimensiones[dim].count : 0;
+        
+        // Convertir el promedio a escala 1-7
+        const nota = promedio === 0 ? 1 : ((promedio / 4) * 6) + 1;
+        
+        document.getElementById(`puntaje_${dim}`).textContent = 
+            promedio.toFixed(2);
+        document.getElementById(`nota_${dim}`).textContent = 
+            nota.toFixed(1);
+        
+        notaFinal += nota * dimensiones[dim].weight;
+    }
+
+    document.getElementById('nota_final').textContent = 
+        notaFinal.toFixed(1);
+}
+
+        function updateCompetencias() {
+            const competencias = {
+                1: { sum: 0, count: 0 },
+                2: { sum: 0, count: 0 },
+                3: { sum: 0, count: 0 },
+                4: { sum: 0, count: 0 },
+                5: { sum: 0, count: 0 },
+                6: { sum: 0, count: 0 }
             };
 
-            document.querySelectorAll('.puntaje').forEach(function(input) {
-                let dimension = input.dataset.dimension;
-                let value = parseFloat(input.value) || 0;
-                if (value !== 0) {
-                    dimensiones[dimension].sum += value;
-                    dimensiones[dimension].count++;
+            document.querySelectorAll('.puntaje').forEach(input => {
+                if (input.value !== '') {
+                    const value = parseFloat(input.value);
+                    if (!isNaN(value) && value >= 0 && value <= 4) {
+                        const comps = input.dataset.competencia.split(',');
+                        comps.forEach(comp => {
+                            competencias[comp].sum += value;
+                            competencias[comp].count++;
+                        });
+                    }
                 }
             });
 
-            let notaFinal = 0;
-            for (let dim in dimensiones) {
-                let promedio = dimensiones[dim].count > 0 ? dimensiones[dim].sum / dimensiones[dim].count : 0;
-                let puntajePonderado = promedio * dimensiones[dim].weight;
-                notaFinal += puntajePonderado;
-                document.getElementById('puntaje_' + dim).textContent = promedio.toFixed(2);
-            }
+            for (let comp in competencias) {
+                const porcentaje = competencias[comp].count > 0 ?
+                    (competencias[comp].sum / (competencias[comp].count * 4)) * 100 : 0;
+                
+                const progressBar = document.getElementById(`comp${comp}-progress`);
+                progressBar.style.width = `${porcentaje}%`;
+                progressBar.textContent = `${Math.round(porcentaje)}%`;
 
-            // Convertir la nota a escala de 1 a 7
-            let notaEscala7 = (notaFinal / 4) * 6 + 1;
-            document.getElementById('nota_final').textContent = notaEscala7.toFixed(1);
-
-            // Verificar si algún ítem tiene nota inferior a 4.0
-            let reprobado = false;
-            document.querySelectorAll('.puntaje').forEach(function(input) {
-                if (parseFloat(input.value) > 0 && parseFloat(input.value) < 4.0) {
-                    reprobado = true;
+                // Cambiar color según el porcentaje
+                if (porcentaje < 60) {
+                    progressBar.style.backgroundColor = '#dc3545';
+                } else if (porcentaje < 75) {
+                    progressBar.style.backgroundColor = '#ffc107';
+                } else {
+                    progressBar.style.backgroundColor = '#28a745';
                 }
-            });
-
-            if (reprobado) {
-                alert("El estudiante ha reprobado la Práctica debido a que tiene al menos un ítem con nota inferior a 4.0");
             }
         }
     </script>
