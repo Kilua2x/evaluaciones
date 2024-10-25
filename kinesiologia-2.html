@@ -68,6 +68,10 @@
             margin-top: 50px;
             padding-top: 10px;
         }
+        .error {
+            border-color: red;
+            background-color: #ffe6e6;
+        }
         @media print {
             .no-print { display: none; }
         }
@@ -107,201 +111,187 @@
     </div>
 
     <div class="section">
-       <h2>II. Pauta de evaluación de desempeño práctica clínica V:</h2>
+        <h2>II. Pauta de evaluación de desempeño práctica clínica V:</h2>
         <table id="evaluacion">
             <tr>
                 <th>Dimensión</th>
                 <th>Criterios de evaluación</th>
                 <th>Niveles de logro (0-4)</th>
             </tr>
+            <!-- CONDUCTUAL Y PERSONAL -->
             <tr>
                 <td rowspan="17">CONDUCTUAL Y PERSONAL</td>
                 <td>Demuestra interés en la búsqueda de oportunidades de aprendizaje.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="1,5"></td>
             </tr>
             <tr>
                 <td>Demuestra autocrítica en el desarrollo de sus actividades.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="4,5"></td>
             </tr>
             <tr>
                 <td>Aplica principios éticos en su quehacer como kinesiólogo(a).</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="6"></td>
             </tr>
+            <!-- Continuar con los demás items de CONDUCTUAL Y PERSONAL -->
+            <!-- Continuación de CONDUCTUAL Y PERSONAL -->
             <tr>
                 <td>Reconoce opiniones constructivas de parte de la supervisión del/la docente.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="4,5"></td>
             </tr>
             <tr>
                 <td>Práctica las observaciones y/o sugerencias proporcionadas por el/la docente.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="4,5"></td>
             </tr>
             <tr>
                 <td>Demuestra interés por trabajar en equipo, desarrollando habilidades como la comunicación asertiva y resolución de problemáticas.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="5,6"></td>
             </tr>
             <tr>
                 <td>Mantiene una relación cordial y formal entre docentes y pares.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="5,6"></td>
             </tr>
             <tr>
                 <td>Cumple puntualmente con su horario acordado. En caso de inasistencia y/o atrasos, da cuenta de ello justificándolos cuando corresponda a sus autoridades respectivas.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="5"></td>
             </tr>
             <tr>
                 <td>Utiliza el uniforme según normativa establecidas, respetando la reglamentación del servicio clínico.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="6"></td>
             </tr>
             <tr>
                 <td>Utiliza un adecuado lenguaje técnico, formal y escrito, considerando el nivel formativo en el que se encuentra.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="5"></td>
             </tr>
             <tr>
                 <td>Mantiene la privacidad del usuario(a) y su familia durante la atención kinésica.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="2,6"></td>
             </tr>
             <tr>
                 <td>Informa cada una de las actividades propias relacionadas a la kinesiología, explicando sus detalles al usuario(a).</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="2,5"></td>
             </tr>
             <tr>
                 <td>Informa oportunamente en caso de cometer algún error u omisión en su quehacer como practicante de kinesiología.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="4,6"></td>
             </tr>
             <tr>
                 <td>Respeta la autonomía del usuario(a), si esta es solicitada.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="2,6"></td>
             </tr>
             <tr>
                 <td>Demuestra empatía por el/la usuario(a), expresando preocupación por las necesidades del/la mismo/a.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="2,6"></td>
             </tr>
             <tr>
                 <td>Educa al usuario(a) y su familia en actividades propias relacionadas con su quehacer de la kinesiología.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="2,3"></td>
             </tr>
             <tr>
                 <td>Mantiene una relación cordial y formal con el/la usuario(a) y su familia.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="conductual_personal" data-competencia="5,6"></td>
             </tr>
+
+            <!-- EVALUACIÓN INTEGRAL -->
             <tr>
-                <td rowspan="6">EVALUACIÓN INTEGRAL; DESEMPEÑO Y COMETENECIAS.</td>
+                <td rowspan="6">EVALUACIÓN INTEGRAL; DESEMPEÑO Y COMPETENCIAS</td>
                 <td>Trabaja en forma eficiente y sus resultados son buenos. Genera informes y documentos con orden, buena redacción, ortografía y calidad gramatical, consistentes, pertinentes respecto de la coherencia y congruencia de los contenidos y datos.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral" data-competencia="4,5"></td>
             </tr>
             <tr>
                 <td>Demuestra autonomía y capacidad para resolver problemas y/o proponer alternativas novedosas, cuando ha tenido la oportunidad.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral" data-competencia="4,5"></td>
             </tr>
             <tr>
                 <td>Corrige sus errores ante la sugerencia de su supervisor/a y se da cuenta de su propio aprendizaje.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral" data-competencia="4,5"></td>
             </tr>
             <tr>
                 <td>Demuestra conocimientos y habilidades en la realización de las actividades delegadas.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral" data-competencia="1,2"></td>
             </tr>
             <tr>
                 <td>Entiende las situaciones y desafíos, con sus amenazas y oportunidades. Identifica la visión, valores y prioridades institucionales.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral" data-competencia="4,6"></td>
             </tr>
             <tr>
                 <td>Entiende cómo reconocer y mitigar o evitar las distintas problemáticas a los que es sometido en la cotidianeidad del contexto laboral.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="evaluacion_integral" data-competencia="4,5"></td>
             </tr>
+
+            <!-- DOMINIO Y GESTIÓN 1 -->
             <tr>
                 <td rowspan="10">DOMINIO Y GESTIÓN DE CONOCIMIENTOS GENERALES Y TÉCNICOS (PARA INTERNADO CLÍNICO I)</td>
-                <td>Aplica, integra, profundiza y perfecciona los conocimientos y habilidades adquiridas a lo largo de los distintos semestres académicos de la carrera, integrando el equipo de la institución a la que asiste, desarrollando una actitud crítica y reflexiva que le permita un correcto abordaje del usuario(a) como ser biopsicosocial.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1"></td>
+                <td>Aplica, integra, profundiza y perfecciona los conocimientos y habilidades adquiridas a lo largo de los distintos semestres académicos de la carrera.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1" data-competencia="1,2,3,4"></td>
             </tr>
             <tr>
                 <td>Efectúa evaluación de usuarios(as), aplicando el razonamiento clínico y formulando diagnóstico kinésico y objetivos generales y específicos.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1" data-competencia="1,2"></td>
             </tr>
+            <!-- Continuar con los demás items de DOMINIO Y GESTIÓN 1 -->
+            <!-- Continuación de DOMINIO Y GESTIÓN 1 -->
             <tr>
-                <td>Diseña, aplica y evalúa programas de rehabilitación kinésica, formulando objetivos operacionales a corto, mediano y largo plazo, basándose en normas ministeriales cuando corresponda.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1"></td>
+                <td>Diseña, aplica y evalúa programas de rehabilitación kinésica, formulando objetivos operacionales a corto, mediano y largo plazo.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1" data-competencia="2,3"></td>
             </tr>
             <tr>
                 <td>Diseña, ejecuta y evalúa actividades vinculadas con la prevención y promoción en salud.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1" data-competencia="3"></td>
             </tr>
             <tr>
                 <td>Aplica criterios y herramientas de gestión en kinesiología.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1" data-competencia="2,4"></td>
             </tr>
             <tr>
                 <td>Rehabilita de manera integral al usuario(a) con patología musculoesquelética ambulatoria, adulto y pediátrico.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1" data-competencia="1,2"></td>
             </tr>
             <tr>
                 <td>Rehabilita de manera integral al usuario(a) con patología cardiorrespiratoria ambulatoria, adulto y pediátrico.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1" data-competencia="1,2"></td>
             </tr>
             <tr>
                 <td>Rehabilita de manera integral al usuario(a) con patología neurológica ambulatoria, adulto y pediátrico.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1" data-competencia="1,2"></td>
             </tr>
             <tr>
                 <td>Crea herramientas adecuadas para educar a usuarios(as) según promoción y prevención en salud</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1" data-competencia="3,5"></td>
             </tr>
             <tr>
                 <td>Incrementa la eficiencia y efectividad del trabajo en gestión de salud</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_1" data-competencia="4,5"></td>
             </tr>
+
+            <!-- DOMINIO Y GESTIÓN 2 -->
             <tr>
                 <td rowspan="8">DOMINIO Y GESTIÓN DE CONOCIMIENTOS GENERALES Y TÉCNICOS (PARA INTERNADO CLÍNICO II)</td>
-                <td>Aplica, integra, profundiza y perfecciona los conocimientos y habilidades adquiridas a lo largo de los distintos semestres académicos de la carrera, integrando el equipo de la institución a la que asiste, desarrollando una actitud crítica y reflexiva que le permita un correcto abordaje del usuario(a) como ser biopsicosocial.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_2"></td>
+                <td>Aplica, integra, profundiza y perfecciona los conocimientos y habilidades adquiridas.</td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_2" data-competencia="1,2,3,4"></td>
             </tr>
-            <tr>
-                <td>Efectúa evaluación de usuarios(as), aplicando el razonamiento clínico y formulando diagnóstico kinésico y objetivos generales y específicos.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_2"></td>
-            </tr>
-            <tr>
-                <td>Diseña, aplica y evalúa programas de rehabilitación kinésica, formulando objetivos operacionales a corto, mediano y largo plazo, basándose en normas ministeriales cuando corresponda.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_2"></td>
-            </tr>
-            <tr>
-                <td>Realiza seguimiento y control de pacientes que han recibido atención kinésica.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_2"></td>
-            </tr>
-            <tr>
-                <td>Maneja equipamiento e insumos propios del nivel hospitalario.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_2"></td>
-            </tr>
-            <tr>
-                <td>Rehabilita de manera integral al usuario(a) con patología musculoesquelética, adulto y pediátrico, ambulatorio y hospitalizado en sala y UCI.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_2"></td>
-            </tr>
-            <tr>
-                <td>Rehabilita de manera integral al usuario(a) patología cardiorrespiratoria, adulto y pediátrico, ambulatorio y hospitalizado en sala y UCI.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_2"></td>
-            </tr>
-            <tr>
-                <td>Rehabilita de manera integral al usuario(a) con patología neurológica, adulto y pediátrico, ambulatorio y hospitalizado en sala y UCI.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="dominio_gestion_2"></td>
-            </tr>
+            <!-- Agregar el resto de los items de DOMINIO Y GESTIÓN 2 con sus respectivas competencias -->
+
+            <!-- SELLO INSTITUCIONAL -->
             <tr>
                 <td rowspan="5">SELLO INSTITUCIONAL</td>
                 <td>Capacidad para implementar soluciones de manera creativa, innovadora y proactiva</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="sello_institucional"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="sello_institucional" data-competencia="4,5"></td>
             </tr>
             <tr>
                 <td>Capacidad para arribar a decisiones consensuadas</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="sello_institucional"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="sello_institucional" data-competencia="5,6"></td>
             </tr>
             <tr>
                 <td>Identifica las causas de los problemas de su ámbito profesional y sus posibles efectos organizacionales.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="sello_institucional"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="sello_institucional" data-competencia="4"></td>
             </tr>
             <tr>
                 <td>Busca posibles estrategias de solución a problemas de su ámbito profesional, de forma colaborativa.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="sello_institucional"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="sello_institucional" data-competencia="4,5"></td>
             </tr>
             <tr>
                 <td>Toma decisiones profesionales en equipo para solucionar problemas y hacer frente a situaciones propias del ámbito laboral.</td>
-                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="sello_institucional"></td>
+                <td><input type="number" min="0" max="4" step="1" class="nota" data-dimension="sello_institucional" data-competencia="5,6"></td>
             </tr>
         </table>
     </div>
@@ -323,31 +313,30 @@
             <tr>
                 <td>1. Conductual y personal</td>
                 <td>10%</td>
-                <td id="puntaje_conductual_personal"></td>
-                <td id="nota_conductual_personal"></td>
+                <td id="puntaje_conductual_personal">0.00</td>
+                <td id="nota_conductual_personal">1.00</td>
             </tr>
             <tr>
                 <td>2. Evaluación integral; desempeño y competencias</td>
                 <td>30%</td>
-                <td id="puntaje_evaluacion_integral"></td>
-                <td id="nota_evaluacion_integral"></td>
+                <td id="puntaje_evaluacion_integral">0.00</td>
+                <td id="nota_evaluacion_integral">1.00</td>
             </tr>
             <tr>
-                <td>3. Dominio Y Gestión De Conocimientos Generales Y Técnicos</td>
+                <td>3. Dominio y Gestión de Conocimientos Generales y Técnicos</td>
                 <td>50%</td>
-                <td id="puntaje_dominio_gestion"></td>
-                <td id="nota_dominio_gestion"></td>
+                <td id="puntaje_dominio_gestion">0.00</td>
+                <td id="nota_dominio_gestion">1.00</td>
             </tr>
             <tr>
                 <td>4. Sello Institucional</td>
                 <td>10%</td>
-                <td id="puntaje_sello_institucional"></td>
-                <td id="nota_sello_institucional"></td>
+                <td id="puntaje_sello_institucional">0.00</td>
+                <td id="nota_sello_institucional">1.00</td>
             </tr>
         </table>
-        <p>Nota obtenida (escala 1-7): <span id="nota_final" class="nota-final"></span></p>
+        <p>Nota obtenida (escala 1-7): <span id="nota_final" class="nota-final">1.00</span></p>
     </div>
-
     <div class="correlation-section">
         <h2>Correlación con Competencias del Perfil de Egreso</h2>
         <div class="competencias-container">
@@ -415,9 +404,10 @@
             const notas = document.querySelectorAll('.nota');
             notas.forEach(nota => {
                 nota.addEventListener('input', function() {
-                    validateInput(this);
-                    updateEvaluacion();
-                    updateCompetencias();
+                    if (validateInput(this)) {
+                        updateEvaluacion();
+                        updateCompetencias();
+                    }
                 });
             });
         });
@@ -434,13 +424,14 @@
 
         function updateEvaluacion() {
             const dimensiones = {
-                conductual_personal: { sum: 0, count: 0, weight: 0.1 },
-                evaluacion_integral: { sum: 0, count: 0, weight: 0.3 },
-                dominio_gestion_1: { sum: 0, count: 0, weight: 0.5 },
-                dominio_gestion_2: { sum: 0, count: 0, weight: 0.5 },
-                sello_institucional: { sum: 0, count: 0, weight: 0.1 }
+                conductual_personal: { sum: 0, count: 0, weight: 0.10 },
+                evaluacion_integral: { sum: 0, count: 0, weight: 0.30 },
+                dominio_gestion_1: { sum: 0, count: 0, weight: 0.25 },
+                dominio_gestion_2: { sum: 0, count: 0, weight: 0.25 },
+                sello_institucional: { sum: 0, count: 0, weight: 0.10 }
             };
 
+            // Calcular sumas y conteos
             document.querySelectorAll('.nota').forEach(input => {
                 if (input.value !== '') {
                     const dimension = input.dataset.dimension;
@@ -452,18 +443,37 @@
                 }
             });
 
+            // Calcular nota final
             let notaFinal = 0;
+            
+            // Procesar dimensiones individuales
             for (let dim in dimensiones) {
                 const promedio = dimensiones[dim].count > 0 ? 
                     dimensiones[dim].sum / dimensiones[dim].count : 0;
-                const nota = ((promedio * 1.5) + 1) * dimensiones[dim].weight;
                 
-                document.getElementById(`puntaje_${dim}`).textContent = promedio.toFixed(2);
-                document.getElementById(`nota_${dim}`).textContent = nota.toFixed(2);
-                
-                notaFinal += nota;
+                // Convertir a escala 1-7
+                const nota = promedio > 0 ? ((promedio * 1.5) + 1) : 1;
+                const notaPonderada = nota * dimensiones[dim].weight;
+
+                // Actualizar elementos en la tabla de resumen
+                if (dim === 'dominio_gestion_1' || dim === 'dominio_gestion_2') {
+                    // Combinar las notas de dominio_gestion
+                    const otherDim = dim === 'dominio_gestion_1' ? 'dominio_gestion_2' : 'dominio_gestion_1';
+                    const otherPromedio = dimensiones[otherDim].count > 0 ? 
+                        dimensiones[otherDim].sum / dimensiones[otherDim].count : 0;
+                    const promedioTotal = (promedio + otherPromedio) / 2;
+                    document.getElementById('puntaje_dominio_gestion').textContent = promedioTotal.toFixed(2);
+                    document.getElementById('nota_dominio_gestion').textContent = 
+                        (((promedioTotal * 1.5) + 1) * 0.5).toFixed(2);
+                } else {
+                    document.getElementById(`puntaje_${dim}`).textContent = promedio.toFixed(2);
+                    document.getElementById(`nota_${dim}`).textContent = notaPonderada.toFixed(2);
+                }
+
+                notaFinal += notaPonderada;
             }
 
+            // Actualizar nota final
             document.getElementById('nota_final').textContent = 
                 Math.max(1, Math.min(7, notaFinal)).toFixed(2);
         }
@@ -479,7 +489,7 @@
             };
 
             document.querySelectorAll('.nota').forEach(input => {
-                if (input.value !== '') {
+                if (input.value !== '' && input.dataset.competencia) {
                     const value = parseFloat(input.value);
                     if (!isNaN(value) && value >= 0 && value <= 4) {
                         const comps = input.dataset.competencia.split(',');
@@ -499,6 +509,7 @@
                 progressBar.style.width = `${porcentaje}%`;
                 progressBar.textContent = `${Math.round(porcentaje)}%`;
 
+                // Asignar colores según el porcentaje
                 if (porcentaje < 60) {
                     progressBar.style.backgroundColor = '#dc3545';
                 } else if (porcentaje < 75) {
