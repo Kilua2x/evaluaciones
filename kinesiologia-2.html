@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pauta de Evaluación Internado Clínico - Carrera de Kinesiología</title>
+    <title>Sistema Integrado de Evaluación Kinesiológica</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,9 +11,7 @@
             margin: 0;
             padding: 20px;
         }
-        h1, h2 {
-            color: #333;
-        }
+        h1, h2, h3 { color: #2c3e50; }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -24,25 +22,54 @@
             padding: 8px;
             text-align: left;
         }
-        th {
-            background-color: #f2f2f2;
-        }
-        input[type="text"], input[type="number"], select {
+        th { background-color: #f2f2f2; }
+        input[type="text"], input[type="number"], input[type="date"], select, textarea {
             width: 100%;
             padding: 5px;
             margin: 5px 0;
         }
-        textarea {
-            width: 100%;
-            height: 100px;
-        }
-        .section {
-            margin-bottom: 30px;
-        }
+        textarea { height: 100px; }
+        .section { margin-bottom: 30px; }
         .nota-final {
             font-weight: bold;
             font-size: 1.2em;
             color: #007bff;
+        }
+        .competencia-card {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #f0f0f0;
+            margin: 5px 0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 20px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            transition: width 0.5s ease-in-out;
+        }
+        .correlation-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        .firma {
+            border-top: 1px solid #000;
+            margin-top: 50px;
+            padding-top: 10px;
+        }
+        @media print {
+            .no-print { display: none; }
         }
     </style>
 </head>
@@ -80,7 +107,7 @@
     </div>
 
     <div class="section">
-        <h2>II. Pauta de evaluación de desempeño práctica clínica V:</h2>
+       <h2>II. Pauta de evaluación de desempeño práctica clínica V:</h2>
         <table id="evaluacion">
             <tr>
                 <th>Dimensión</th>
@@ -306,7 +333,7 @@
                 <td id="nota_evaluacion_integral"></td>
             </tr>
             <tr>
-                <td>3. Dominio Y Gestión De Conocimientos Generales Y Técnicos (Según periodo)</td>
+                <td>3. Dominio Y Gestión De Conocimientos Generales Y Técnicos</td>
                 <td>50%</td>
                 <td id="puntaje_dominio_gestion"></td>
                 <td id="nota_dominio_gestion"></td>
@@ -321,82 +348,166 @@
         <p>Nota obtenida (escala 1-7): <span id="nota_final" class="nota-final"></span></p>
     </div>
 
+    <div class="correlation-section">
+        <h2>Correlación con Competencias del Perfil de Egreso</h2>
+        <div class="competencias-container">
+            <div class="competencia-card">
+                <h4>Competencia 1: Evaluación del Movimiento Humano</h4>
+                <p>Evaluar las características del movimiento humano, considerando los procesos anatomofisiológicos.</p>
+                <div class="progress-bar">
+                    <div class="progress" id="comp1-progress">0%</div>
+                </div>
+            </div>
+
+            <div class="competencia-card">
+                <h4>Competencia 2: Atención Kinésica Integral</h4>
+                <p>Otorgar atención kinésica integral al usuario.</p>
+                <div class="progress-bar">
+                    <div class="progress" id="comp2-progress">0%</div>
+                </div>
+            </div>
+
+            <div class="competencia-card">
+                <h4>Competencia 3: Intervención en Salud</h4>
+                <p>Desarrollar intervenciones dirigidas a la promoción, prevención, recuperación y rehabilitación.</p>
+                <div class="progress-bar">
+                    <div class="progress" id="comp3-progress">0%</div>
+                </div>
+            </div>
+
+            <div class="competencia-card">
+                <h4>Competencia 4: Análisis Crítico</h4>
+                <p>Realizar análisis crítico de la evidencia científica.</p>
+                <div class="progress-bar">
+                    <div class="progress" id="comp4-progress">0%</div>
+                </div>
+            </div>
+
+            <div class="competencia-card">
+                <h4>Competencia 5: Habilidades Transversales</h4>
+                <p>Desarrollar habilidades transversales asociadas al liderazgo y comunicación efectiva.</p>
+                <div class="progress-bar">
+                    <div class="progress" id="comp5-progress">0%</div>
+                </div>
+            </div>
+
+            <div class="competencia-card">
+                <h4>Competencia 6: Compromiso Social</h4>
+                <p>Contribuir a la sociedad mediante el compromiso con los derechos humanos.</p>
+                <div class="progress-bar">
+                    <div class="progress" id="comp6-progress">0%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="firma">
+        <p>Firma estudiante: ____________________</p>
+    </div>
+    <div class="firma">
+        <p>Firma docente supervisor: ____________________</p>
+    </div>
+
+    <button class="no-print" onclick="window.print()">Imprimir / Guardar como PDF</button>
+
     <script>
-        const notas = document.querySelectorAll('.nota');
-        const puntajes = {
-            conductual_personal: 0,
-            evaluacion_integral: 0,
-            dominio_gestion_1: 0,
-            dominio_gestion_2: 0,
-            sello_institucional: 0
-        };
-
-        const ponderaciones = {
-            conductual_personal: 0.1,
-            evaluacion_integral: 0.3,
-            dominio_gestion_1: 0.5,
-            dominio_gestion_2: 0.5,
-            sello_institucional: 0.1
-        };
-
-        function actualizarPuntajes() {
-            let notaFinal = 0;
-
-            for (const dimension in puntajes) {
-                const notasDimension = document.querySelectorAll(`.nota[data-dimension="${dimension}"]`);
-                let suma = 0;
-                let contador = 0;
-                notasDimension.forEach(nota => {
-                    const valor = parseFloat(nota.value);
-                    if (!isNaN(valor) && valor !== 0) {
-                        suma += valor;
-                        contador++;
-                    }
-                });
-                if (contador > 0) {
-                    puntajes[dimension] = suma / contador;
-                } else {
-                    puntajes[dimension] = 0;
-                }
-                const puntajeElement = document.getElementById(`puntaje_${dimension}`);
-                const notaElement = document.getElementById(`nota_${dimension}`);
-                if (puntajeElement) puntajeElement.textContent = puntajes[dimension].toFixed(2);
-                
-                // Convertir puntaje (0-4) a nota (1-7) y aplicar ponderación
-                const notaDimension = ((puntajes[dimension] * 1.5) + 1) * ponderaciones[dimension];
-                if (notaElement) notaElement.textContent = notaDimension.toFixed(2);
-                
-                notaFinal += notaDimension;
-            }
-
-            // Asegurar que la nota final esté en el rango 1-7
-            notaFinal = Math.max(1, Math.min(7, notaFinal));
-            
-            document.getElementById('nota_final').textContent = notaFinal.toFixed(2);
-
-            // Verificar si alguna nota es inferior a 4.0 en la escala 1-7
-            let reprobado = false;
+        document.addEventListener('DOMContentLoaded', function() {
+            const notas = document.querySelectorAll('.nota');
             notas.forEach(nota => {
-                const valor = parseFloat(nota.value);
-                if (!isNaN(valor) && valor !== 0) {
-                    const notaEscala17 = Math.min(Math.max((valor * 1.5) + 1, 1), 7);
-                    if (notaEscala17 < 4.0) {
-                        reprobado = true;
+                nota.addEventListener('input', function() {
+                    validateInput(this);
+                    updateEvaluacion();
+                    updateCompetencias();
+                });
+            });
+        });
+
+        function validateInput(input) {
+            const value = parseFloat(input.value);
+            if (isNaN(value) || value < 0 || value > 4) {
+                input.classList.add('error');
+                return false;
+            }
+            input.classList.remove('error');
+            return true;
+        }
+
+        function updateEvaluacion() {
+            const dimensiones = {
+                conductual_personal: { sum: 0, count: 0, weight: 0.1 },
+                evaluacion_integral: { sum: 0, count: 0, weight: 0.3 },
+                dominio_gestion_1: { sum: 0, count: 0, weight: 0.5 },
+                dominio_gestion_2: { sum: 0, count: 0, weight: 0.5 },
+                sello_institucional: { sum: 0, count: 0, weight: 0.1 }
+            };
+
+            document.querySelectorAll('.nota').forEach(input => {
+                if (input.value !== '') {
+                    const dimension = input.dataset.dimension;
+                    const value = parseFloat(input.value);
+                    if (!isNaN(value) && value >= 0 && value <= 4) {
+                        dimensiones[dimension].sum += value;
+                        dimensiones[dimension].count++;
                     }
                 }
             });
 
-            if (reprobado) {
-                alert('El estudiante ha reprobado el Internado Clínico debido a que tiene al menos un ítem con nota inferior a 4.0');
+            let notaFinal = 0;
+            for (let dim in dimensiones) {
+                const promedio = dimensiones[dim].count > 0 ? 
+                    dimensiones[dim].sum / dimensiones[dim].count : 0;
+                const nota = ((promedio * 1.5) + 1) * dimensiones[dim].weight;
+                
+                document.getElementById(`puntaje_${dim}`).textContent = promedio.toFixed(2);
+                document.getElementById(`nota_${dim}`).textContent = nota.toFixed(2);
+                
+                notaFinal += nota;
             }
+
+            document.getElementById('nota_final').textContent = 
+                Math.max(1, Math.min(7, notaFinal)).toFixed(2);
         }
 
-        notas.forEach(nota => {
-            nota.addEventListener('input', actualizarPuntajes);
-        });
+        function updateCompetencias() {
+            const competencias = {
+                1: { sum: 0, count: 0 },
+                2: { sum: 0, count: 0 },
+                3: { sum: 0, count: 0 },
+                4: { sum: 0, count: 0 },
+                5: { sum: 0, count: 0 },
+                6: { sum: 0, count: 0 }
+            };
 
-        // Llamar a la función una vez al inicio para mostrar los valores iniciales
-        actualizarPuntajes();
+            document.querySelectorAll('.nota').forEach(input => {
+                if (input.value !== '') {
+                    const value = parseFloat(input.value);
+                    if (!isNaN(value) && value >= 0 && value <= 4) {
+                        const comps = input.dataset.competencia.split(',');
+                        comps.forEach(comp => {
+                            competencias[comp].sum += value;
+                            competencias[comp].count++;
+                        });
+                    }
+                }
+            });
+
+            for (let comp in competencias) {
+                const porcentaje = competencias[comp].count > 0 ?
+                    (competencias[comp].sum / (competencias[comp].count * 4)) * 100 : 0;
+                
+                const progressBar = document.getElementById(`comp${comp}-progress`);
+                progressBar.style.width = `${porcentaje}%`;
+                progressBar.textContent = `${Math.round(porcentaje)}%`;
+
+                if (porcentaje < 60) {
+                    progressBar.style.backgroundColor = '#dc3545';
+                } else if (porcentaje < 75) {
+                    progressBar.style.backgroundColor = '#ffc107';
+                } else {
+                    progressBar.style.backgroundColor = '#28a745';
+                }
+            }
+        }
     </script>
 </body>
 </html>
